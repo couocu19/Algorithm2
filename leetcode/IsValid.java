@@ -1,9 +1,17 @@
 package leetcode;
 
 import java.util.HashMap;
+import java.util.Set;
 import java.util.Stack;
+import java.util.Scanner;
 public class IsValid {
     public static void main(String[] args) {
+        Scanner w = new Scanner(System.in);
+        String k = w.nextLine();
+        Solution8 sss = new Solution8();
+
+        System.out.println(sss.isValid(k));
+
 
 
     }
