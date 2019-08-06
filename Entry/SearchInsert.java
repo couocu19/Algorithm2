@@ -5,14 +5,14 @@ public class SearchInsert {
     public static void main(String[] args) {
         int[] nums = {1,3,5,6};
         int target = 7;
-        Solution a = new Solution();
+        Solutionm a = new Solutionm();
         System.out.println(a.searchInsert(nums,target));
 
     }
 
 }
 
-class Solution {
+class Solutionm {
     public int searchInsert(int[] nums, int target) {
         int location = 0;
         int i;

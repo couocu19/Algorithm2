@@ -11,7 +11,7 @@ public class ThreeSum {
     }
 }
 
-class Solution {
+class Solutionm {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
         int len = nums.length;
