@@ -7,7 +7,7 @@ public class MergeTwoList {
     }
 }
 
-class Solution{
+class Solutions{
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if(l1==null){
             return l2;
@@ -31,6 +31,27 @@ class ListNode {
       int val;
       ListNode next;
       ListNode(int x) { val = x; }
-  }
+
+    public ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+
+    public int getVal() {
+        return val;
+    }
+
+    public void setVal(int val) {
+        this.val = val;
+    }
+
+    public ListNode getNext() {
+        return next;
+    }
+
+    public void setNext(ListNode next) {
+        this.next = next;
+    }
+}
 
 
