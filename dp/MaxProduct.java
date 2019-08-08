@@ -1,5 +1,6 @@
 package dp;
 
+//152.乘积最大子序列
 public class MaxProduct {
     public static void main(String[] args) {
         int[] nums = {-2,0,-1};
@@ -9,6 +10,7 @@ public class MaxProduct {
     }
 }
 
+//暴力法
 class Solutiondp {
     public int maxProduct(int[] nums) {
         int max = -1;
