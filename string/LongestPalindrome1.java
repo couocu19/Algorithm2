@@ -3,14 +3,14 @@ package string;
 public class LongestPalindrome1 {
     public static void main(String[] args) {
 
-        Solution s = new Solution();
+        Solutionkkk s = new Solutionkkk();
         String s1 = "babad";
         System.out.println(s.longestPalindrome(s1));
 
     }
 }
 
-class Solution {
+class Solutionkkk {
        public String longestPalindrome(String s) {
         if(s.equals("")){
             return "";

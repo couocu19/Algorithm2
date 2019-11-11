@@ -22,7 +22,6 @@ class Solutionf {
                 if(i==len1-1 && j!=len2-1){
                     dp[i][j] = grid[i][j] + dp[i][j+1];
                 }
-
                 else if(j ==len2-1 && i!=len1-1){
                     dp[i][j] = grid[i][j] +dp[i+1][j];
                 }
