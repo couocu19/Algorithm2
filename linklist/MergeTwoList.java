@@ -37,6 +37,11 @@ class ListNode {
         this.next = next;
     }
 
+
+    public ListNode(){
+
+    }
+
     public int getVal() {
         return val;
     }
