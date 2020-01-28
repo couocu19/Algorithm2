@@ -23,12 +23,9 @@ public class ThreeNumSum {
 
     }
      static void fSum(){
-
-        String[] s = new String[Math.]
-        for()
-
-
-
+//
+//        String[] s = new String[Math.]
+//        for()
 
 
      }
