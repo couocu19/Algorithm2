@@ -7,19 +7,22 @@ public class MyAtoi {
 
         Solution8 s =  new Solution8();
       //  System.out.println(Integer.valueOf("  -1234"));
-
-
-        System.out.println(Integer.MIN_VALUE);
-        System.out.println(s.myAtoi("-91283472332"));
-//        System.out.println( s.isInteger("  -1234"));
-
-
+        //System.out.println(Integer.MIN_VALUE);
+        System.out.println(s.myAtoi("/"));
 
     }
 }
 
 class Solution8 {
     public int myAtoi(String str) {
+
+        if(str.equals("")){
+            return 0;
+        }
+
+        if(str.equals("-"))
+            return 0;
+
         int len = str.length();
         int flag = 0;
         while(str.charAt(0) == ' '){
@@ -43,45 +46,59 @@ class Solution8 {
         }
 
 
-
-        for(int i =0;i<len;i++){
-            if(str.charAt(0)=='-') {
-                if (str.charAt(0) < 48 || str.charAt(0) > 57) {
+        if((str.charAt(0) < 48 || str.charAt(0) > 57)){
+            if(str.charAt(0)!='-'){
+                return 0;
+            }else{
+                if(str.charAt(1) < 48 || str.charAt(1) > 57) {
                     return 0;
                 }
-                if(str.charAt(i)< 48 || str.charAt(i)>57) {
-                    str = str.substring(0, i);
-                    return Integer.valueOf(str);
-
-                }
             }
-            else{
-                if(str.charAt(1) < 48 || str.charAt(1) > 57){
-                    return 0;
-                }else{
-                    if(str.charAt(i)< 48 || str.charAt(i)>57) {
-                      str = str.substring(0, i);
-                      return Integer.valueOf(str);
-
-                }
-                }
-            }
-
-            //System.out.println(str);
         }
 
-        return Integer.valueOf(str);
 
+        for(int i =1;i<len;i++){
+
+            if (str.charAt(0) < 48 || str.charAt(0) > 57){
+                return 0;
+            }
+
+            if(str.charAt(i)< 48 || str.charAt(i)>57) {
+                str = str.substring(0, i);
+                System.out.println(str);
+                return Integer.valueOf(str);
+            }
+
+        }
+        return Integer.valueOf(str);
     }
 
     public boolean isInteger(String str) {
-        Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");
-        return pattern.matcher(str).matches();
+        int len = str.length();
+
+        if(str.charAt(0) <48 || str.charAt(0)>57){
+            if(str.charAt(0) == '-'){
+                for(int i =1;i<len;i++){
+                    if(str.charAt(i) <48 || str.charAt(i)>57){
+                        return false;
+                    }
+                }
+
+            }else{
+                return false;
+            }
+
+        }else{
+            for(int i =1;i<len;i++){
+                if(str.charAt(i) <48 || str.charAt(i)>57){
+                    return false;
+                }
+            }
+        }
+
+        return true;
+
     }
-
-
-
-
 
 
 }
