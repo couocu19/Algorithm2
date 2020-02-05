@@ -21,6 +21,8 @@ public class DetectCycle {
 
 }
 
+
+//只能通过四个例子
  class Solution142 {
     public ListNode detectCycle(ListNode head) {
         ListNode p = head;
