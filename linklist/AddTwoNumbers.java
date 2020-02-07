@@ -5,36 +5,23 @@ public class AddTwoNumbers {
         ListNode p = new ListNode();
         ListNode cur = null;
         ListNode head = p;
-        for(int i =1;i<=3;i++)
+        for(int i =5;i<=6;i++)
         {
             cur = new ListNode(i,null);
             head.next = cur;
             head = cur;
-            //System.out.println(cur.val);
         }
-//        for(ListNode p1 = p.next;p1!=null;p1 = p1.next){
-//            System.out.print(p1.val+" ");
-//        }
 
         ListNode q = new ListNode();
         ListNode head1 = q;
         ListNode cur1 = null;
-        for(int i =4;i<=6;i++){
+        for(int i =2;i<=4;i++){
             cur1 = new ListNode(i,null);
             head1.next = cur1;
             head1 = cur1;
         }
-//        for(ListNode p1 = q.next;p1!=null;p1 = p1.next){
-//            System.out.print(p1.val+" ");
-//        }
-
-        Solution2 s = new Solution2();
+        Solution2s s = new Solution2s();
         ListNode d =  s.addTwoNumbers(p.next,q.next);
-
-       for(ListNode p1 = d;p1!=null;p1 = p1.next){
-            System.out.print(p1.val+" ");
-        }
-
 
 
     }
@@ -48,30 +35,43 @@ class Solution2 {
         int i=0,j=0;
         ListNode p = l1;
         ListNode q = l2;
-        ListNode result = null;
+        ListNode result = new ListNode();
+        result.next = null;
         ListNode s = result;
+        ListNode s1 ;
         while(p!=null){
-          //  System.out.println(p.val);
             num1[i++] = p.val;
-            //System.out.println(num1[i-1]);
             p = p.next;
-        }
-        System.out.println(i);
-        for(int a:num1){
-            System.out.println(a);
         }
         while(q!=null){
             num2[j++] = q.val;
             q = q.next;
         }
         int len = Math.max(i,j);
-        for(int k = 0;k<len;k++){
-            s.val+=num1[i--]+num2[j--];
-            s.next.val = num[k]/10;
-            s.val = num[k]%10;
-            s = s.next;
-
+        for(int k = 0;k<len+1;k++){
+            num[k] += num1[k]+num2[k];
+            num[k+1] = num[k]/10;
+            num[k] = num[k]%10;
         }
+        if(num[len]!=0){
+            len++;
+        }
+        for(int l = 0;l<len;l++){
+            System.out.println(num[l]);
+        }
+
+        for(int k = 0;k<len;k++){
+          s.val = num[k];
+          System.out.println(s.val);
+          s1 = new ListNode();
+          s.next = s1;
+          s = s1;
+        }
+
+        for(ListNode p1 = result;p1!=null;p1 = p1.next){
+            System.out.print(p1.val);
+        }
+
         return result;
     }
 }
