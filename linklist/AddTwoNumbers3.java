@@ -23,6 +23,7 @@ class Solution2s {
             int y = q == null?0:q.val;
             sum = carry + x + y;
             carry = sum/10;
+            //尾插法
             r1 = new ListNode(sum%10);
             r.next = r1;
             if(p!=null){
