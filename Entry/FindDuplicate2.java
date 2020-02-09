@@ -22,9 +22,7 @@ class Solution287s {
        for(int i = 1;i<len;i++){
            if(nums[i]==nums[i-1]){
                return nums[i];
-
            }
-
        }
        return 0;
        
