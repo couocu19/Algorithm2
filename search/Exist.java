@@ -7,8 +7,7 @@ public class Exist {
 }
 
 
-class Solution {
-
+class Solution79 {
     private boolean[][] marked;
 
     //        x-1,y
