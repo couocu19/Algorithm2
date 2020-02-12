@@ -1,4 +1,4 @@
-package search;
+package backtrack;
 
 public class Exist1 {
     public static void main(String[] args) {
