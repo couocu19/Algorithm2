@@ -17,6 +17,8 @@ class Solution17s {
     private Map<Character, String> map;
     private List<String> result = new ArrayList<>();
     private String digits;
+
+
     public List<String> letterCombinations(String digits) {
         if (digits == null || digits.length() == 0)
             return result;

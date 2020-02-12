@@ -49,11 +49,9 @@ class Solution79s{
         }
 
 
-
-
+        //每次函数调用的终止点
         if(board[i][j] == word.charAt(start)){
             marked[i][j] = true;
-
 
             for(int k =0;k<4;k++){
 
@@ -66,6 +64,7 @@ class Solution79s{
 
                 }
             }
+            //如果下一级的四个方向都返回false，则本级也设置为false
             marked[i][j] = false;
 
         }
