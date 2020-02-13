@@ -40,7 +40,6 @@ class Solution46 {
                     list.add(a);
                     backTrack(list,nums);
                     //关键 //若不写这一句只能出来一个结果
-                    
                     //回溯(状态返回)
                     list.remove(list.size()-1);
                 }
