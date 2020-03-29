@@ -1,8 +1,11 @@
 package linklist;
 
+import java.util.HashSet;
+import java.util.Set;
 
-//删除无序链表中的重复项
-public class RemoveDup {
+//借助辅助空间删除链表中的重复项
+//空间换时间
+public class RemoveDupSet {
     public static void main(String[] args) {
         int i = 1;
         ListNode head = new ListNode();
@@ -27,38 +30,34 @@ public class RemoveDup {
             System.out.print(cur.val+" ");
         }
         System.out.println();
-        removeDup(head);
+        remove(head);
         System.out.println("删除重复结点后:");
         for(cur = head.next;cur!=null;cur = cur.next){
             System.out.print(cur.val+" ");
         }
 
 
+
     }
 
-
-    public static ListNode removeDup(ListNode head){
-        if(head == null){
-            return null;
-        }
-        ListNode outerCur = head.next;
-        ListNode innerCur = null;
-        ListNode innerCurPre = null;
-        ListNode temp = null;
-        for(;outerCur!=null;outerCur = outerCur.next){
-            for(innerCur=outerCur.next,innerCurPre=outerCur;innerCur!=null;){
-                if(innerCur.val == outerCur.val){
-                    innerCurPre.next = innerCur.next;
-                    innerCur = innerCur.next;
-                }else{
-                    innerCurPre = innerCur;
-                    innerCur = innerCur.next;
-                }
+    public static ListNode remove(ListNode head){
+        Set<Integer> set = new HashSet<>();
+        ListNode cur = head.next;
+        ListNode curNext = null;
+        for(;cur!=null&&cur.next!=null;){
+            curNext = cur.next;
+            if(set.contains(cur.val)){
+                cur.next = curNext.next;
+                cur = cur.next;
+            }else{
+                cur = cur.next;
             }
+            set.add(cur.val);
         }
 
         return head;
     }
+
 
 
 }
