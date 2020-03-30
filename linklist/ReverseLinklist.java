@@ -31,10 +31,8 @@ public class ReverseLinklist {
     //链表的就地逆置
     //需要设置三个指针变量
     static ListNode reverseList(ListNode head){
-
         if(head == null || head.next == null || head.next.next == null)
             return head;
-
         ListNode pre = null; //当前节点的前驱结点
         ListNode cur = null; //循环遍历到的当前结点
         ListNode next = null; //当前结点的下一个结点
@@ -53,7 +51,6 @@ public class ReverseLinklist {
             next = cur.next;
             cur.next = pre;
             pre = cur;
-            cur = cur.next;
             cur = next;
         }
 
