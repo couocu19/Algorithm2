@@ -9,7 +9,7 @@ public class ReverseLinklist1 {
         Construct.printList(head);
 
     }
-    
+
     //插入法逆置链表
     static ListNode reverseList1(ListNode head){
 

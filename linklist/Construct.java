@@ -84,6 +84,34 @@ public class Construct {
 
     }
 
+    //构造一个带环的链表
+    public static ListNode loopListConstructor(){
+        ListNode head = new ListNode();
+        ListNode temp = null;
+        head.next = null;
+        ListNode cur = head;
+        for(int i =1;i<=4;i++){
+            temp = new ListNode(i);
+            temp.next = null;
+            cur.next = temp;
+            cur = temp;
+        }
+        ListNode flag = new ListNode(5);
+        cur.next = flag;
+        cur = flag;
+        for(int i = 6;i<=9;i++){
+            temp = new ListNode(i);
+            temp.next = null;
+            cur.next = temp;
+            cur = temp;
+        }
+        cur.next = flag;
+
+        return head;
+
+    }
+
+
     //输出链表内容
     public static void printList(ListNode head){
         ListNode cur = null;
@@ -102,5 +130,7 @@ public class Construct {
 
         return cur;
     }
+
+
 
 }
