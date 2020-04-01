@@ -47,4 +47,40 @@ public class FastAndSlow {
         return slow;
 
     }
+
+    //判断链表是否有环
+    //如果链表成环则返回快慢指针相遇结点如果不成环则返回空
+    public static ListNode isLoop(ListNode head){
+        if(head == null || head.next == null){
+            return null;
+        }
+        ListNode slow = head;
+        ListNode fast  = head;
+        while(fast!=null&&fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(fast == slow){
+                return slow;
+            }
+        }
+        return null;
+    }
+
+    //找到带环结点
+    public static ListNode loopNode(ListNode head){
+        if(head == null || head.next == null){
+            return null;
+        }
+        ListNode meetNode = isLoop(head);
+        if(meetNode == null){
+            return null;
+        }
+        ListNode cur = head.next;
+        while(cur!=meetNode){
+            cur = cur.next;
+            meetNode = meetNode.next;
+        }
+
+        return cur;
+    }
 }
