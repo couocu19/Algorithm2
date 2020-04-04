@@ -24,10 +24,8 @@ public class ReverseK {
             if(i == k){
                 cur.next = null;
                 pre.next = ReverseClass.noHeadReverse(reverseCur);
-              //  Construct.printList(pre);
                 i = 1;
                 pre = reverseCur;
-               // System.out.println(pre.val);
                 cur = next;
                 reverseCur = cur;
                 pre.next = reverseCur;
