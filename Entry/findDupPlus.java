@@ -15,9 +15,10 @@ public class findDupPlus {
 
     public static void main(String[] args) {
 
-        int[] nums = {1,2,3,3,3,4,5,5,5,5,6};
+        int[] nums = {1,2,2,2,3,3,4,4,4,4,4,5,6};
         int num = 6;
-        HashSet<Integer> s = findDup(nums,num);
+        int n = nums.length - num;
+        HashSet<Integer> s = findDup(nums,n);
         Iterator<Integer> iterator = s.iterator();
         while(iterator.hasNext()){
             System.out.print(iterator.next()+" ");
@@ -26,6 +27,7 @@ public class findDupPlus {
 
     }
 
+    //注意：这里传的n为一共重复数字的个数哦
     public static HashSet<Integer> findDup(int[] nums,int n){
         HashSet<Integer> s = new HashSet<>();
         if(null == nums){
@@ -33,7 +35,7 @@ public class findDupPlus {
         }
         int len = nums.length;
         int index = nums[0];
-        n = n-1;
+       // n = n;
         while (true){
             if(nums[index]<0){
                 n--;
