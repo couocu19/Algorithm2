@@ -8,7 +8,7 @@ import java.util.Set;
 public class FindDup {
 
     public static void main(String[] args) {
-        int[] nums = {1,3,3,4,5,2};
+        int[] nums = {1,3,3,3,4,5,2};
         System.out.println(findDup1(nums));
         System.out.println(findDup2(nums));
         System.out.println(findDup3(nums));
@@ -46,14 +46,13 @@ public class FindDup {
         while(left<right){
             mid = (left+right)/2;
             cnt = 0;
-
             for(int a:nums){
                 if(a<=mid){
                     cnt++;
                 }
             }
-            if(cnt>mid){
 
+            if(cnt>mid){
                 right = mid;
             }else{
                 left = mid+1;
@@ -75,6 +74,7 @@ public class FindDup {
         }
         return (sum1-sum);
     }
+
 
     //数据下标映射法
     public static int findDup5(int[] nums){
