@@ -8,7 +8,7 @@ import java.util.Set;
 public class FindDup {
 
     public static void main(String[] args) {
-        int[] nums = {1,3,3,3,4,5,2};
+        int[] nums = {4,1,4,4,4,4,6};
         System.out.println(findDup1(nums));
         System.out.println(findDup2(nums));
         System.out.println(findDup3(nums));

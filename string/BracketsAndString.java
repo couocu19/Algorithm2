@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class BracketsAndString {
     public static void main(String[] args) {
-        String s = "cd10(4a)";
+        String s = "6h3k";
         System.out.println(toS(s));
 
     }
@@ -30,13 +30,15 @@ public class BracketsAndString {
                         i++;
                     }
                     int n = Integer.parseInt(sb.substring(di,i));
-                    if(s.charAt(i) == '(') {
+                    if(sb.charAt(i) == '(') {
                         stack2.push(n);
                     }else{
-                        str1 = String.join("",Collections.nCopies(n,s.charAt(i)+""));
+                        str1 = String.join("",Collections.nCopies(n,sb.charAt(i)+""));
                         sb.replace(di,i+1,str1);
                         len = sb.length();
                         i = i + (str1.length()-(i+2-di));
+                        System.out.println(sb.toString());
+                        System.out.println(i);
                     }
                 }
 

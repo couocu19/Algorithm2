@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class RomanToInt {
     public static void main(String[] args) {
-        String s = "IV";
+        String s = "MMMMMMMMMDCCCLXXV";
         Solution13 s13 = new Solution13();
         System.out.println(s13.romanToInt(s));
 

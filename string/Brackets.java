@@ -10,7 +10,7 @@ public class Brackets {
         String b1 = "[[[]]]";
         System.out.println(isMatched1(b));
         Solution20 s = new Solution20();
-        System.out.println(s.isValid(b1));
+        System.out.println(s.isValid(b));
 
 
     }

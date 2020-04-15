@@ -1,5 +1,15 @@
 package sort;
 
+
+/**
+ * 堆排序的主要思路:
+ *  1.将待排序元素构造成一个大顶堆(或者小顶堆)。
+ *  2.将第一个根节点语数组的最后一个元素交换，此时，最后一个最后一个元素为最大值。
+ *  3.将剩下的n-1和元素也构造成同样的堆，并继续交换找出最大值。
+ *  4.按照这个过程依次进行。
+ *  5.得到排序序列。
+ *
+ */
 public class HeapSort {
     public static void main(String[] args) {
         //int a[] = new int[8];
@@ -43,6 +53,7 @@ public class HeapSort {
             //如果当前插入的值大于其父节点的值，则交换值，并且将索引指向父节点
             //然后继续和上面的父节点值比较，直到不大于父节点，则退出循环
 
+            System.out.println(fatherIndex);
             while(arr[currentIndex] > arr[fatherIndex]){
                 //交换当前节点与父节点
                 swap(arr,currentIndex,fatherIndex);
@@ -81,7 +92,6 @@ public class HeapSort {
             //将索引指向孩子中较大值的索引
             index = largestIndex;
             //重新计算交换之后的孩子的索引
-            left = 2*index+1;
             right = 2*index+2;
             left = 2*index+1;
 
