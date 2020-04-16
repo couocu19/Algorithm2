@@ -15,7 +15,7 @@ public class findDupPlus {
 
     public static void main(String[] args) {
 
-        int[] nums = {1,2,2,2,3,3,4,4,4,4,4,5,6};
+        int[] nums = {4,3,2,5,6,2,3,1};
         int num = 6;
         int n = nums.length - num;
         HashSet<Integer> s = findDup(nums,n);

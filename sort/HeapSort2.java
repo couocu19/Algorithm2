@@ -12,7 +12,6 @@ public class HeapSort2 {
         for(int a:num){
             System.out.print(a+" ");
         }
-
     }
 
 
