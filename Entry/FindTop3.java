@@ -5,8 +5,8 @@ import java.util.*;
 //找出数组中最大的前k个数
 public class FindTop3 {
     public static void main(String[] args) {
-        int nums[] = {4,6,3,8,0,1,11,20,7,5,77,888,9999};
-        int k = 6;
+        int nums[] = {1,2,3,4,5,6,7};
+        int k = 5;
        // System.out.println(find(nums,k));
         System.out.println(find1(nums,k));
 
@@ -58,11 +58,8 @@ public class FindTop3 {
         for(int i =0;i<len;i++){
             if(nums[i]>result[0]){
                 result[0] = nums[i];
-                k1 = k;
-                for(int j =0;j<k1;j++){
-                    adjustHeap(result,0,k1);
-                    k1--;
-                }
+                    adjustHeap(result,0,k);
+
             }
         }
         sort(result);
@@ -71,6 +68,9 @@ public class FindTop3 {
         return list ;
 
     }
+
+
+
 
     public static void swap(Integer[] nums,int a,int b){
         int temp ;

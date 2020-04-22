@@ -40,6 +40,8 @@ public class HeapSort3 {
 
     }
 
+
+    //todo:修改这里
     public static void adjustHeap(int[] nums,int index,int size){
         int left = 2*index+1;
         int right = 2*index+2;
