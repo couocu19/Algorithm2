@@ -10,7 +10,7 @@ public class Construct {
         head.next = null;
         ListNode temp = null;
         ListNode cur = head;
-        for(int i =1;i<=8;i++){
+        for(int i =1;i<=2;i++){
             temp = new ListNode(i);
             temp.next = null;
             cur.next = temp;
