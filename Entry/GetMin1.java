@@ -57,6 +57,4 @@ public class GetMin1 {
         return low;
     }
 
-
-
 }

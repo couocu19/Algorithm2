@@ -58,8 +58,6 @@ class Solution215s {
 
     }
 
-
-
     private void adjustHeap(int[] nums,int index,int len){
         int left = 2*index+1;
         int right = 2*index+2;
@@ -85,15 +83,12 @@ class Solution215s {
         }
 
 }
-
     private void swap(int[] nums,int a,int b){
         int temp;
         temp = nums[a];
         nums[a] = nums[b];
         nums[b] = temp;
     }
-
-
     private void sort(int[] nums){
         int len = nums.length;
         while(len>1){
@@ -101,7 +96,5 @@ class Solution215s {
             len--;
             adjustHeap(nums, 0,len);
         }
-
-
     }
 }
