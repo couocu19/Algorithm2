@@ -37,9 +37,8 @@ public class FindSubSet {
     public static int[] binaryToDecimal(int n,int[] flags,int len){
         int t = 0;
         for(int i = len-1;i >= 0; i--) {
-            flags[t++] = n >>> i & 1;
+            flags[t++] = n >> i & 1;
         }
-
 
         return flags;
     }

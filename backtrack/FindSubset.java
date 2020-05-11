@@ -16,6 +16,8 @@ public class FindSubset {
         return result;
     }
 
+
+
     private static void backtrack(int[] nums,List<Integer> list,int begin){
         result.add(new ArrayList<>(list));
         for(int i =begin;i<nums.length;i++){
