@@ -11,7 +11,7 @@ public class ArrayToTree {
             System.out.print(a+" ");
         }
         System.out.println();
-        TreeNode root = arrayToTree1(arr,0,arr.length-1);
+        TreeNode root = arrayToTree2(arr,0,arr.length-1);
         System.out.println("二叉树：");
         PrintTree.printTreeMidTree(root);
         System.out.println();
@@ -53,7 +53,7 @@ public class ArrayToTree {
             //先赋值
             root.val = arr[mid];
             root.left = arrayToTree1(arr,start,mid-1);
-            root.right = arrayToTree(arr,mid+1,end);
+            root.right = arrayToTree1(arr,mid+1,end);
 
         }else{
             root = null;
@@ -61,6 +61,28 @@ public class ArrayToTree {
 
         return root;
     }
+
+    //5.18复习
+
+    public static TreeNode arrayToTree2(int[] arr,int start,int end) {
+
+        TreeNode root = null;
+        if (end >= start) {
+            root = new TreeNode();
+            int mid = (start + end + 1) / 2;
+            root.val = arr[mid];
+            root.left = arrayToTree2(arr, start, mid - 1);
+            root.right = arrayToTree2(arr, mid + 1, end);
+        } else {
+            root = null;
+        }
+
+        return root;
+
+    }
+
+
+
 
 
 
