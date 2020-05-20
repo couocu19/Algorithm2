@@ -1,10 +1,12 @@
 package tree;
 
+import linklist.Construct;
+
 public class FindMaxSubTree {
     public static int maxSum = Integer.MIN_VALUE;
     public static void main(String[] args) {
 
-        TreeNode root = constructTree();
+        TreeNode root = ConstructorTree.construct();
         TreeNode maxRoot = new TreeNode();
         findMaxSubTree(root,maxRoot);
         System.out.println("最大子树和为："+maxSum);
@@ -26,6 +28,8 @@ public class FindMaxSubTree {
         }
         return sum;
     }
+
+
 
     public static TreeNode constructTree(){
         TreeNode root = new TreeNode();

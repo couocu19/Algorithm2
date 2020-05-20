@@ -9,7 +9,6 @@ public class combinationSum2 {
         int[] nums = {2,3,6,7};
         Solution39s1 s = new Solution39s1();
         System.out.println(s.combinationSum(nums,7));
-
     }
 
 }
@@ -21,8 +20,6 @@ class Solution39s1{
     private int len;
     private int sum = 0;
 
-
-
     public List<List<Integer>> combinationSum(int[] candidates, int target){
         this.candidates = candidates;
         this.target = target;
@@ -31,9 +28,7 @@ class Solution39s1{
 
         List<Integer> list = new ArrayList<>();
         backtrack(list,0,sum);
-
         return result;
-
 
     }
 
@@ -61,8 +56,4 @@ class Solution39s1{
         }
 
     }
-
-
-
-
 }
