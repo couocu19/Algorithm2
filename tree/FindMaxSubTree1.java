@@ -2,14 +2,11 @@ package tree;
 
 public class FindMaxSubTree1 {
 
-   // public static int maxSum = Integer.MIN_VALUE;
     public static void main(String[] args) {
         TreeNode root = ConstructorTree.construct();
         TreeNode maxRoot = new TreeNode();
         System.out.println(find(root,maxRoot));
         System.out.println(maxRoot.val);
-
-
 
     }
 
@@ -37,9 +34,6 @@ public class FindMaxSubTree1 {
         return maxSum;
 
     }
-
-
-
-
+    
 
 }
