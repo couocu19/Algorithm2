@@ -5,8 +5,19 @@ import java.util.Map;
 
 public class LRUCaches {
 
-
-
+    public static void main(String[] args) {
+        int capacity = 3;
+        int key = 5;
+        LRUCache obj = new LRUCache(capacity);
+        int param_1 = obj.get(key);
+        System.out.println(param_1);
+        obj.put(1,2);
+        obj.put(2,6);
+        obj.put(3,8);
+        obj.put(5,99);
+        param_1 = obj.get(5);
+        System.out.println(param_1);
+    }
 
 }
 
@@ -53,6 +64,8 @@ class LRUCache {
         return node.value;
     }
 
+
+
     public void put(int key, int value) {
         DLinkedNode node = map.get(key);
         if(node == null){
@@ -67,9 +80,9 @@ class LRUCache {
                 --size;
             }
         }else{
+            //如果存在该key值，就先替换数据值，然后置于表
             node.value = value;
             moveToHead(node);
-
 
         }
 
@@ -102,7 +115,6 @@ class LRUCache {
         DLinkedNode res = tail.prev;
         removeNode(res);
         return res;
-
     }
 }
 

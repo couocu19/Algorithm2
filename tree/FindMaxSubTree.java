@@ -1,6 +1,5 @@
 package tree;
 
-import linklist.Construct;
 
 public class FindMaxSubTree {
     public static int maxSum = Integer.MIN_VALUE;
@@ -18,6 +17,7 @@ public class FindMaxSubTree {
         if(root == null){
             return 0;
         }
+
         int lMax = findMaxSubTree(root.left,maxRoot);
         int rMax = findMaxSubTree(root.right,maxRoot);
         int sum = lMax+rMax+root.val;
