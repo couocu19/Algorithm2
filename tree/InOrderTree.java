@@ -10,7 +10,7 @@ public class InOrderTree {
         int arr[] = {1,2,3,4,5,6,7};
         TreeNode root;
         root = ArrayToTree.arrayToTree(arr,0,arr.length-1);
-        inOrderBSTree(root);
+        inOrderBSTree1(root);
         TreeNode cur ;
         System.out.println("转换后双向链表正向遍历：");
         for(cur = pHead;cur!=null;cur = cur.right){
@@ -23,7 +23,6 @@ public class InOrderTree {
     private static TreeNode pHead = null;
     private static TreeNode pEnd = null;
 
-    
     public static void inOrderBSTree(TreeNode root){
         if(root == null)
             return;
@@ -39,5 +38,25 @@ public class InOrderTree {
         }
         pEnd = root;
         inOrderBSTree(root.right);
+    }
+
+    public static void inOrderBSTree1(TreeNode root){
+        if(root == null)
+            return;
+        inOrderBSTree(root.left);
+
+        root.left = pEnd;
+        if(pEnd == null){
+            pHead = root;
+
+        }else{
+            pEnd.right = root;
+        }
+
+        pEnd = root;
+
+        inOrderBSTree(root.right);
+
+
     }
 }

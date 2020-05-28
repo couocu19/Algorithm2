@@ -63,10 +63,10 @@ public class ArrayToTree {
     }
 
     //5.18复习
-
     public static TreeNode arrayToTree2(int[] arr,int start,int end) {
 
         TreeNode root = null;
+
         if (end >= start) {
             root = new TreeNode();
             int mid = (start + end + 1) / 2;
