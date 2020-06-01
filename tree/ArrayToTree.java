@@ -11,7 +11,7 @@ public class ArrayToTree {
             System.out.print(a+" ");
         }
         System.out.println();
-        TreeNode root = arrayToTree2(arr,0,arr.length-1);
+        TreeNode root = arrayToTree(arr,0,arr.length-1);
         System.out.println("二叉树：");
         PrintTree.printTreeMidTree(root);
         System.out.println();
