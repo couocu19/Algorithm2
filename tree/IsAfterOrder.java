@@ -39,7 +39,7 @@ public class IsAfterOrder {
             if(arr[i]>root)
                 break;
         }
-        //todo:计组
+
         //如果序列是后序遍历的序列，那么从i开始的所有值都大一root的值
         for(j=i;j<end;j++){
             if(arr[j]<root)
