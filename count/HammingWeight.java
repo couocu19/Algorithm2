@@ -22,6 +22,5 @@ class SolutionA {
             m <<= 1;
         }
         return sum;
-
     }
 }

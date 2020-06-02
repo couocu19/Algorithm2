@@ -30,6 +30,7 @@ public class PrintTreeLayer {
             return;
         TreeNode p;
         queue.offer(root);
+
         while(queue.size()>0){
             //当前结点出队列
             p = queue.poll();

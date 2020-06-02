@@ -30,9 +30,9 @@ class SolutionW {
                 if(s.charAt(i) == '.')
                     break;
             }
-            for(int j = i+1;j<len;j++){
-
-            }
+//            for(int j = i+1;j<len;j++){
+//
+//            }
 
         }
 
