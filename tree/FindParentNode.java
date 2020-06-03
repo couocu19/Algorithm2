@@ -14,7 +14,7 @@ public class FindParentNode {
         TreeNode node2 = root.left.right;
 
         TreeNode res = null;
-        res = getParent(root,node1,node2);
+        res = getParent1(root,node1,node2);
         if(res!=null)
             System.out.println(node1.val+"与"+node2.val+"的最近公共父节点为"+res.val);
         else
@@ -61,6 +61,37 @@ public class FindParentNode {
         return comment;
     }
 
+    /**
+     *
+     * @param root
+     * @param node1
+     * @param node2
+     * @return
+     */
+    public static TreeNode getParent1(TreeNode root,TreeNode node1,TreeNode node2){
+        if(root == null || root == node1 || root == node2){
+            return root;
+        }
+
+        TreeNode lChild = getParent1(root.left,node1,node2);
+        TreeNode rChild = getParent1(root.right,node1,node2);
+
+        if(lChild == null) {
+//            System.out.print(rChild.val+" ");
+            return rChild;
+        }
+
+        else if(rChild == null) {
+  //          System.out.print(lChild.val+" ");
+            return lChild;
+        }
+
+        else {
+    //        System.out.print(root.val+" ");
+            return root;
+        }
+
+    }
 
 
 }

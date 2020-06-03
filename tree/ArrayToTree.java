@@ -34,7 +34,6 @@ public class ArrayToTree {
             root.val = arr[mid];
             //递归的用左半部分数组构造root的左子树
             root.left = arrayToTree(arr,start,mid-1);
-
             //递归的用右半部分数组构造root的右子树
             root.right = arrayToTree(arr,mid+1,end);
         }else{
