@@ -32,6 +32,7 @@ public class IsAfterOrder {
         //数组的最后一个
         int root = arr[end];
 
+        System.out.println(root);
         int i,j;
         //找到第一个大于root的值，那么前面所有的结点都位于root的左子树上
 
