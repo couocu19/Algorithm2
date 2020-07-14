@@ -6,7 +6,7 @@ import java.util.*;
 public class Brackets {
 
     public static void main(String[] args) {
-        String b = ")}{({))[{{[}";
+        String b = ">>><<<";
         String b1 = "[[[]]]";
         System.out.println(isMatched1(b));
         Solution20 s = new Solution20();
@@ -56,6 +56,8 @@ public class Brackets {
         if(len%2 == 1){
             return "no";
         }
+
+
         for(int i =0;i<len;i++){
            int num =  map.get(brackets.charAt(i));
            num++;
