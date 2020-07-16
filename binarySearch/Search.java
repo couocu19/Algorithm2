@@ -2,16 +2,14 @@ package binarySearch;
 
 public class Search {
     public static void main(String[] args) {
-        int arr[] = {15,16,19,20,25,1,3,4,5,7,10,14};
-        int target = 5;
+        int arr[] = {2,1,2,2};
+        int target = 2;
         Solution1003s s = new Solution1003s();
-        System.out.println(s.search(arr,target));
+        //System.out.println(s.search(arr,target));
 
-
+        Solution1003ss s1 = new Solution1003ss();
+        System.out.println(s1.search1(arr,target));
     }
-
-
-
 }
 
 class Solution1003 {
@@ -98,6 +96,7 @@ class Solution1003ss{
                     h = mid - 1;
                 }
             } else {
+
                 if (arr[mid] < arr[l] && target >= arr[l]) {
                     h = mid - 1;
                 } else {
@@ -106,6 +105,34 @@ class Solution1003ss{
             }
         }
         if (l < arr.length && arr[l] == target) return l;
+        return -1;
+    }
+
+    public int search1(int[] arr,int target){
+        int low = 0;
+        int high = arr.length-1;
+        int mid;
+
+        while(low<=high){
+            mid = (low+high)/2;
+            if(target>arr[mid]){
+                if(target>=arr[low] && arr[mid]<arr[low]){
+                    high = mid-1;
+                }else{
+                    low = mid+1;
+                }
+            }else{
+                if(target<=arr[high] && arr[mid]>arr[high]){
+                    low = mid+1;
+
+                }else{
+                    high = mid-1;
+                }
+            }
+        }
+        if(low<arr.length && arr[low] == target)
+            return low;
+
         return -1;
     }
 }
