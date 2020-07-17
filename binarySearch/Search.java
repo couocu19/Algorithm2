@@ -8,7 +8,7 @@ public class Search {
         //System.out.println(s.search(arr,target));
 
         Solution1003ss s1 = new Solution1003ss();
-        System.out.println(s1.search1(arr,target));
+        System.out.println(s1.search2(arr,target));
     }
 }
 
@@ -115,7 +115,7 @@ class Solution1003ss{
 
         while(low<=high){
             mid = (low+high)/2;
-            if(target>arr[mid]){
+            if(target>=arr[mid]){
                 if(target>=arr[low] && arr[mid]<arr[low]){
                     high = mid-1;
                 }else{
@@ -134,5 +134,36 @@ class Solution1003ss{
             return low;
 
         return -1;
+    }
+
+
+
+    public int search2(int[] arr,int target){
+        int low = 0;
+        int high = arr.length-1;
+        int mid;
+        while(low<=high){
+            mid = low+(high-low)>>2;
+            if(target<=arr[mid]){
+                if(target<=arr[high] && arr[high]<arr[mid]){
+                    low = mid+1;
+                }else{
+                    high = mid-1;
+                }
+            }else{
+                if(target>=arr[low] && arr[mid]<arr[low]){
+                    high = mid-1;
+                }else{
+                    low = mid+1;
+                }
+            }
+        }
+
+        if(low<=arr.length && arr[low] == target)
+            return low;
+
+        return -1;
+
+
     }
 }
