@@ -56,11 +56,37 @@ class Solution392 {
 
     }
 
+    public boolean isSubsequence11(String s,String t){
+        int len = t.length();
+        int i =0;
+        for(char ch:s.toCharArray()){
+            while(i<len && ch!=t.charAt(i))
+                i++;
+
+            i++;
+        }
+        return i<=len;
+    }
+
     //利用库中的indexOf(ch,index)方法
     public boolean isSubsequence2(String s,String t){
         int j = -1;
         char[] chars = s.toCharArray();
         for(int i =0;i<chars.length;i++){
+            j = t.indexOf(chars[i],j+1);
+            if(j == -1)
+                return false;
+        }
+
+        return true;
+
+
+    }
+
+    public boolean isSubsequence22(String s,String t){
+        int j = -1;
+        char[] chars = s.toCharArray();
+        for(int i =0;i<s.length();i++){
             j = t.indexOf(chars[i],j+1);
             if(j == -1)
                 return false;
