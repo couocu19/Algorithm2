@@ -45,6 +45,8 @@ public class FindTop3 {
         return list;
     }
 
+
+
     //适用于k值比较大的情况
     //使用一个小顶堆来保存数据
     public static List<Integer> find1(int[] nums,int k){
@@ -59,7 +61,6 @@ public class FindTop3 {
             if(nums[i]>result[0]){
                 result[0] = nums[i];
                     adjustHeap(result,0,k);
-
             }
         }
         sort(result);
