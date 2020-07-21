@@ -6,7 +6,6 @@ public class KthSmallestPrimeFraction1 {
         int[] A = {1,2,3,5};
         int K = 1;
         Solution786 s = new Solution786();
-        //System.out.println(s.kthSmallestPrimeFraction(A,K));
         for(int a:s.kthSmallestPrimeFraction(A,K)){
             System.out.println(a);
         }
