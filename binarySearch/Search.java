@@ -2,13 +2,13 @@ package binarySearch;
 
 public class Search {
     public static void main(String[] args) {
-        int arr[] = {2,1,2,2};
-        int target = 2;
+        int arr[] = {5,1,3};
+        int target = 1;
         Solution1003s s = new Solution1003s();
         //System.out.println(s.search(arr,target));
 
         Solution1003ss s1 = new Solution1003ss();
-        System.out.println(s1.search2(arr,target));
+        System.out.println(s1.search(arr,target));
     }
 }
 
@@ -143,7 +143,7 @@ class Solution1003ss{
         int high = arr.length-1;
         int mid;
         while(low<=high){
-            mid = low+(high-low)>>2;
+            mid = low+(high-low)>>1;
             if(target<=arr[mid]){
                 if(target<=arr[high] && arr[high]<arr[mid]){
                     low = mid+1;
