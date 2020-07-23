@@ -2,7 +2,7 @@ package binarySearch;
 
 public class Search {
     public static void main(String[] args) {
-        int arr[] = {5,1,3};
+        int arr[] = {5,1,1,1,3};
         int target = 1;
         Solution1003s s = new Solution1003s();
         //System.out.println(s.search(arr,target));
@@ -84,11 +84,12 @@ class Solution1003s{
 }
 
 class Solution1003ss{
+    //套用模板二
     public int search(int[] arr, int target) {
         int l = 0;
         int h = arr.length - 1;
-        while (l <= h) {
-            int mid = l + (h - l >> 1);
+        while (l < h) {
+            int mid = l + ((h - l) >> 1);
             if (arr[mid] >= target) {
                 if (arr[h] < arr[mid] && arr[h] >= target) {
                     l = mid + 1;

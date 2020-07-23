@@ -16,6 +16,8 @@ public class Search1 {
 
 
 class Solution722 {
+
+    //套用模板一
     public int search(int[] nums, int target) {
         int low = 0;
         int high = nums.length-1;
@@ -39,10 +41,7 @@ class Solution722 {
             }
 
         }
-
-//        if(low<nums.length && nums[low] == target)
-//            return low;
-
+        
         return -1;
     }
 }
