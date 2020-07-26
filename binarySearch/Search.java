@@ -2,35 +2,21 @@ package binarySearch;
 
 public class Search {
     public static void main(String[] args) {
-        int arr[] = {5,1,1,1,3};
+        int arr[] = {1,1,2,3,1};
         int target = 1;
         Solution1003s s = new Solution1003s();
-        //System.out.println(s.search(arr,target));
-
         Solution1003ss s1 = new Solution1003ss();
-        System.out.println(s1.search(arr,target));
+        System.out.println(s.search(arr,target));
     }
 }
 
-class Solution1003 {
-    public int search(int[] arr, int target) {
-        int i;
-        for(i = 0;i<arr.length;i++){
-            if(arr[i] == target){
-                return i;
-            }
 
-        }
-
-        return -1;
-    }
-}
 
 class Solution1003s{
     public int search(int[] arr, int target) {
         int minL = getMin(arr,0,arr.length-1);
         int min = arr[minL];
-        if(target == min)
+        if(target == min && target<arr[0])
             return minL;
         if(target>min){
             return binarySearch(arr,minL,arr.length-1,target);
@@ -85,38 +71,13 @@ class Solution1003s{
 
 class Solution1003ss{
     //套用模板二
-    public int search(int[] arr, int target) {
-        int l = 0;
-        int h = arr.length - 1;
-        while (l < h) {
-            int mid = l + ((h - l) >> 1);
-            if (arr[mid] >= target) {
-                if (arr[h] < arr[mid] && arr[h] >= target) {
-                    l = mid + 1;
-                } else {
-                    h = mid - 1;
-                }
-            } else {
-
-                if (arr[mid] < arr[l] && target >= arr[l]) {
-                    h = mid - 1;
-                } else {
-                    l = mid + 1;
-                }
-            }
-        }
-        if (l < arr.length && arr[l] == target) return l;
-        return -1;
-    }
-
-    public int search1(int[] arr,int target){
+    public int search(int[] arr,int target){
         int low = 0;
         int high = arr.length-1;
         int mid;
-
         while(low<=high){
             mid = (low+high)/2;
-            if(target>=arr[mid]){
+            if(target>arr[mid]){
                 if(target>=arr[low] && arr[mid]<arr[low]){
                     high = mid-1;
                 }else{
@@ -137,34 +98,28 @@ class Solution1003ss{
         return -1;
     }
 
-
-
-    public int search2(int[] arr,int target){
-        int low = 0;
-        int high = arr.length-1;
-        int mid;
-        while(low<=high){
-            mid = low+(high-low)>>1;
-            if(target<=arr[mid]){
-                if(target<=arr[high] && arr[high]<arr[mid]){
-                    low = mid+1;
-                }else{
-                    high = mid-1;
+    public int search1(int[] arr,int target){
+        int l =0;
+        int h = arr.length - 1;
+        while(l <= h) {
+            int mid = l + (h-l >> 1);
+            if (arr[mid] >= target) {
+                if (arr[h] < arr[mid] && arr[h] >= target) {
+                    l = mid + 1;
+                } else {
+                    h = mid - 1;
                 }
-            }else{
-                if(target>=arr[low] && arr[mid]<arr[low]){
-                    high = mid-1;
-                }else{
-                    low = mid+1;
+            } else {
+                if (arr[mid] < arr[l] && target >= arr[l]) {
+                    h = mid - 1;
+                } else {
+                    l = mid + 1;
                 }
             }
         }
-
-        if(low<=arr.length && arr[low] == target)
-            return low;
-
+        if (l < arr.length && arr[l] == target) return l;
         return -1;
 
-
     }
+
 }
