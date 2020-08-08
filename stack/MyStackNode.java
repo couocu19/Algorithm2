@@ -87,10 +87,4 @@ class LNode<T>{
         return next;
     }
 
-    //    public LNode(T data, LNode<T> next) {
-//        this.data = data;
-//        this.next = next;
-//    }
-
-
 }
