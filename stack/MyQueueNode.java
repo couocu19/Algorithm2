@@ -7,9 +7,6 @@ public class MyQueueNode {
         queueNode.enQueue(1);
         System.out.println(queueNode.size());
         queueNode.deQueue();
-      //  queueNode.deQueue();
-
-
     }
 }
 
@@ -127,6 +124,7 @@ class QueueNode1<T>{
         if(pHead == null){
             pHead = pEnd = p;
         }else{
+            //尾插法插入
             pEnd.next = p;
             pEnd = p;
         }
