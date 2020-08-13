@@ -22,6 +22,7 @@ public class IsPopSerial {
 
         if(popLen!=pushLen)
             return false;
+
         while(pushIndex<pushLen){
             s.push(push.charAt(pushIndex));
          //   System.out.println(s.peek()+" "+pop.charAt(popIndex));
