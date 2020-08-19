@@ -4,6 +4,21 @@ package stack;
 public class LRUNode {
     public static void main(String[] args) {
 
+        LRU lru = new LRU(5);
+        lru.put(1);
+        lru.put(2);
+        lru.put(3);
+        lru.put(6);
+        lru.put(8);
+
+        lru.printAll();
+        lru.put(7);
+        lru.printAll();
+        System.out.println(lru.get(2));
+
+        lru.printAll();
+
+
 
 
     }
@@ -38,6 +53,9 @@ class LRU{
 
     public int get(int key){
 
+        if(front.val == key)
+            return key;
+
         if(front == null)
             return -1;
 
@@ -62,6 +80,25 @@ class LRU{
 
     }
 
+    public void printAll(){
+        if(front == null)
+            System.out.println("空");
+
+        ListNode temp = front;
+
+        while(temp!=null){
+            System.out.print(temp.val+" ");
+            temp = temp.next;
+        }
+
+        System.out.println();
+
+
+
+
+
+    }
+
     public int size(){
         int size = 0;
         ListNode temp = front;
@@ -73,10 +110,6 @@ class LRU{
         return size;
 
     }
-
-
-
-
 
 
 
