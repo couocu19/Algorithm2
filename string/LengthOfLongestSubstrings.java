@@ -11,7 +11,7 @@ public class LengthOfLongestSubstrings {
         Solution3s s1 = new Solution3s();
 
         System.out.println(s1.lengthOfLongestSubstring(s));
-        
+
 
     }
 
