@@ -20,9 +20,9 @@ public class Partition {
         ListNode cur = s.partition1(head,3);
         ListNode temp = null;
        // System.out.println(1);
-        for(temp = cur;temp !=null;temp = temp.next){
-            System.out.println(temp.val);
-        }
+//        for(temp = cur;temp !=null;temp = temp.next){
+//            System.out.println(temp.val);
+//        }
 
     }
 
@@ -76,11 +76,41 @@ class Solution86 {
             tmp = tmp.next;
         }
 
+
+       // System.out.println(after.next.val);
+        //注意：这里要将after.next置为空，因为after.next的接的是原链表的值。
         after.next = null;
 
         before.next = h2.next;
 
         return h1.next;
+
+    }
+
+    public ListNode partition2(ListNode head, int x){
+        ListNode before = new ListNode(0);
+        ListNode h1 = before;
+
+        ListNode after = new ListNode(0);
+        ListNode h2 = after;
+
+        ListNode tmp = head;
+        while (tmp != null) {
+            if(tmp.val<8){
+                before.next = tmp;
+                before = tmp;
+            }else{
+                after.next = tmp;
+                after = tmp;
+            }
+            tmp = tmp.next;
+        }
+        after.next = null;
+        before.next = h2.next;
+
+        return h1.next;
+
+
 
     }
 }
