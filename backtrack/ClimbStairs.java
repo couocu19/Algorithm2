@@ -28,6 +28,8 @@ class Solution70 {
             sum = sum+1;
             return;
         }
+
+
         if(s<n){
             backtrack(n,s+1);
         }
