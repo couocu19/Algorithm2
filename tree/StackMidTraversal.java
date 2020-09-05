@@ -1,7 +1,5 @@
 package tree;
 
-import linklist.Construct;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -16,6 +14,8 @@ public class StackMidTraversal {
         System.out.println(s.inorderTraversal(head));
 
         System.out.println(s.preorderTraversal(head));
+
+        System.out.println(s.postorderTraversal(head));
 
 
 
@@ -40,8 +40,7 @@ class Solution94 {
         return res;
     }
 
-    //妙啊
-    
+    //前序遍历
     public List<Integer> preorderTraversal(TreeNode root){
         List<Integer> res = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
@@ -60,8 +59,40 @@ class Solution94 {
                 stack.push(node.left);
             }
         }
+        return res;
+    }
+
+    //后序遍历
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+
+
+        //prev结点用来区分之前的结点是否被访问过
+        TreeNode prev = null;
+        while(root!=null || !stack.empty()){
+           if (root!=null){
+                stack.push(root);
+                root = root.left;
+
+            }else {
+                root = stack.peek();
+                if (root.right == null || root.right == prev) {
+                    root = stack.pop();
+                    res.add(root.val);
+                    //标记上一次访问节点
+                    prev = root;
+                    root = null;
+                } else {
+                    root = root.right;
+                    stack.push(root);
+                    root = root.left;
+                }
+            }
+        }
 
         return res;
+
     }
 
 
