@@ -48,7 +48,6 @@ class MyStacks{
     public void pop(){
 
         int top = elemStack.pop();
-
         if(top == minStack.peek()){
             minStack.pop();
         }
@@ -58,7 +57,6 @@ class MyStacks{
         if(minStack.empty()){
             return Integer.MAX_VALUE;
         }
-
         return minStack.peek();
 
     }

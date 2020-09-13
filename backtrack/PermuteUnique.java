@@ -6,7 +6,7 @@ import java.util.List;
 public class PermuteUnique {
     public static void main(String[] args) {
         Solution47 s = new Solution47();
-        int nums[] = {1,2,3,4,5,2,6};
+        int nums[] = {1,3,2};
         System.out.println(s.permuteUnique(nums));
         System.out.println(s.permuteUnique(nums).size());
 

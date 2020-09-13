@@ -6,7 +6,7 @@ import java.util.List;
 //全排列
 public class Permute {
     public static void main(String[] args) {
-        int nums[] = {1,2,3};
+        int nums[] = {1,3,5,6,7};
         Solution46 s = new Solution46();
         System.out.println(s.permute(nums));
     }
