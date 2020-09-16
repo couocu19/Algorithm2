@@ -45,10 +45,6 @@ class Solution18s {
                             res.add(list);
                         }
                         list = new ArrayList<>();
-//                        while (m<n && nums[m+1] == nums[m])
-//                            m++;
-//                        while(m<n && nums[n-1] == nums[n])
-//                            n--;
                         m++;
                         n--;
                     } else if (sum > target) {

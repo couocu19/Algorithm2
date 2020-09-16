@@ -13,7 +13,7 @@ package sort;
 public class HeapSort {
     public static void main(String[] args) {
         //int a[] = new int[8];
-        int[] a = {5,2,8,1,6,9};
+        int[] a = {4,3,6,77,-1,24,7};
         for(int i =0;i<a.length;i++){
             System.out.print(a[i]+" ");
         }
