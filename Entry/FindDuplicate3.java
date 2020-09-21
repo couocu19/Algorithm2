@@ -4,7 +4,10 @@ import java.util.Arrays;
 
 public class FindDuplicate3 {
     public static void main(String[] args) {
+        int[] nums = {4,3,1,0,2,5,3};
 
+        Solution287ss s = new Solution287ss();
+        System.out.println(s.findDuplicate(nums));
     }
 }
 
@@ -17,7 +20,7 @@ class Solution287ss {
         int right = len-1;
         //int mid = (left+right)/2;
         int cnt;
-        while(left<right){
+        while(left<=right){
             cnt = 0;
             int mid = (left+right)/2;
             for(int num:nums){

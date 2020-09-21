@@ -8,12 +8,12 @@ import java.util.Set;
 public class FindDup {
 
     public static void main(String[] args) {
-        int[] nums = {4,3,2,7,8,2,3,1};
-        System.out.println(findDup1(nums));
-        System.out.println(findDup2(nums));
+        int[] nums = {3,3,1,0,2,5,3};
+        //System.out.println(findDup1(nums));
+        //System.out.println(findDup2(nums));
         System.out.println(findDup3(nums));
-        System.out.println(findDup4(nums));
-        System.out.println(findDup5(nums));
+        //System.out.println(findDup4(nums));
+        //System.out.println(findDup5(nums));
     }
 
     public static int findDup1(int[] nums){
@@ -37,9 +37,10 @@ public class FindDup {
     }
 
     //二分法＋循环
+    //注意：该方法不能保证找到数组中所有的重复元素，适用于数组中只有唯一的重复元素的情况
     public static int findDup3(int[] nums){
         int len = nums.length;
-        int left = 0;
+        int left = 1;
         int right = len-1;
         int mid = 0;
         int cnt = 0;
@@ -58,6 +59,8 @@ public class FindDup {
                 left = mid+1;
 
             }
+
+            System.out.println(left);
         }
         return left;
     }
