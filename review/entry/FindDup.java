@@ -2,8 +2,8 @@ package review.entry;
 
 public class FindDup {
     public static void main(String[] args) {
-        int[] nums = {3,3,1,0,2,5,3};
-        System.out.println(getDup2(nums));
+        int[] nums = {3,3,1,2,5,3,2};
+        System.out.println(getDup4(nums));
 
 
 
@@ -71,6 +71,56 @@ public class FindDup {
 
 
 
+    }
+
+
+    public static int getDup3(int[] nums){
+
+        int len = nums.length;
+        int left = 1;
+        int right = len-1;
+        int cnt;
+        int mid;
+        while(left<right){
+            mid = (left+right)/2;
+            cnt = 0;
+            for(int num:nums){
+                if(num<=mid){
+                    cnt++;
+                }
+            }
+
+            if(cnt>mid){
+                right = mid;
+            }else{
+                left = mid+1;
+            }
+        }
+
+        return left;
+
+    }
+
+
+    //时间复杂度O(n)
+    //空间复杂度O(1)
+    public static int getDup4(int[] nums){
+        int slow = 0, fast = 0;
+        do {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        } while (slow != fast);
+        slow = 0;
+        System.out.println(fast);
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
+
+            System.out.println(slow+" "+fast);
+        }
+
+
+        return slow;
     }
 
 
