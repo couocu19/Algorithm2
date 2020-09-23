@@ -10,6 +10,10 @@ public class FindMaxForm {
         System.out.println(s.findMaxForm(strs,m,n));
 
 
+        Solution474s s1 = new Solution474s();
+        System.out.println(s1.findMaxForm(strs,m,n));
+
+
 
     }
 }
@@ -39,6 +43,37 @@ class Solution474 {
             for( j = m;j>=b;j--){
                 for( k = n;k>=a;k--){
                     dp[j][k] = Math.max(1+dp[j-b][k-a],dp[j][k]);
+                }
+            }
+        }
+        return dp[m][n];
+    }
+}
+
+
+class Solution474s{
+    public int findMaxForm(String[] strs, int m, int n){
+        int len;
+        int a;
+        int b;
+        int j;
+        int k;
+        int[][] dp = new int[m+1][n+1];
+        for(String s:strs){
+            len = s.length();
+            a = 0;
+            b = 0;
+            for(int i =0;i<len;i++){
+                if(s.charAt(i) == '0'){
+                    a++;
+                }else{
+                    b++;
+                }
+            }
+            //todo:注意这里的限制条件
+            for(j = m;j>=a;j--){
+                for(k = n;k>=b;k--){
+                    dp[j][k] = Math.max(dp[j-a][k-b]+1,dp[j][k]);
                 }
             }
         }
