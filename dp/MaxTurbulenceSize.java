@@ -32,35 +32,41 @@ class Solution978 {
         int j;
         int pre = -1;
         int max = 1;
-//
+////
         if(A[1]!=A[0]){
             dp[1] = 2;
             max = 2;
         }
         int flag = 0;
         int flag1 = 0;
-        for(int i =1;i<len;){
+        for(int i =2;i<len;){
             flag = 0;
-            for( j =i;j<(len+1)&&flag==0;j++){
-                if ((A[j]>A[j-1] && A[j]<A[j+1]) ||
-                        (A[j]<A[j-1] && A[j]>A[j+1])){
-                    //System.out.print(A[j]+" ");
-                   // System.out.println(j+" "+dp[j-1]);
-                    dp[j+1] = dp[j]+1;
-                    max = Math.max(dp[j+1],max);
+            for( j =i;j<(len)&&flag==0;j++){
+                if ((A[j]>A[j-1] && A[j-1]<A[j-2]) ||
+                        (A[j]<A[j-1] && A[j-1]>A[j-2])){
+                    if(dp[j] == 1){
+                        dp[j]+=1;
+                    }else {
+                        dp[j] = dp[j-1] + 1;
+                    }
+                    max = Math.max(dp[j],max);
                  //   System.out.println("ok"+" "+max);
                 }
                 else{
-                    dp[j+1] = dp[j];
+                    if(A[j] == A[j-1]) {
+                        dp[j] = dp[j - 1];
+                    }else{
+
+
+                    }
                     flag = 1;
-                    max = Math.max(dp[j+1],max);
+                    max = Math.max(dp[j],max);
                 }
             }
-           // System.out.println();
-            i = j;
+            i = j ;
             dp[i] = 1;
-            System.out.println(i+" "+max);
+            //System.out.println(i+" "+max);
             }
-        return max+1;
+        return max;
     }
 }
