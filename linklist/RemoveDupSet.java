@@ -44,7 +44,7 @@ public class RemoveDupSet {
         Set<Integer> set = new HashSet<>();
         ListNode cur = head.next;
         ListNode curNext = null;
-        for(;cur!=null&&cur.next!=null;){
+        for(;cur!=null&&cur.next!=null;){                                                                      
             curNext = cur.next;
             if(set.contains(cur.val)){
                 cur.next = curNext.next;
