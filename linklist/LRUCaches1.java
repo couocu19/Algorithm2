@@ -6,6 +6,19 @@ import java.util.Map;
 public class LRUCaches1 {
     public static void main(String[] args) {
 
+        LRUCache1 l = new LRUCache1(5);
+
+        l.put(1,3);
+        l.put(2,7);
+        l.put(8,30);
+        l.put(6,9);
+        l.put(4,7);
+
+        l.get(8);
+
+        l.put(9,44);
+        System.out.println(l.get(1));
+        System.out.println(l.get(8));
 
     }
 }
