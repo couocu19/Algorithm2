@@ -115,7 +115,7 @@ public class Construct {
     //输出链表内容
     public static void printList(ListNode head){
         ListNode cur = null;
-        for(cur = head.next;cur!=null;cur = cur.next){
+        for(cur = head;cur!=null;cur = cur.next){
             System.out.print(cur.val+" ");
         }
         System.out.println();
