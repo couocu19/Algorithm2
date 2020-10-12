@@ -29,7 +29,6 @@ public class FindDup2 {
     }
 
 
-
     public static int getDup1(int[] nums){
         int slow = 0;
         int fast = 0;
@@ -78,5 +77,22 @@ public class FindDup2 {
 
     }
 
+    //10.12
+    public static int getDup3(int[] nums){
+        int fast = 0;
+        int slow = 0;
+        do{
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        }while (slow!=fast);
+        slow = 0;
+
+        while (slow!=fast){
+            slow = nums[slow];
+            fast = nums[fast];
+        }
+
+        return slow;
+    }
 
 }

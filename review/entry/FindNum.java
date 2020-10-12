@@ -56,9 +56,6 @@ public class FindNum {
         int i = 0;
         int j = len2-1;
         boolean flag = false;
-
-
-
         while (i<len1 && j>=0){
 
             if(nums[i][j] == target){
@@ -75,6 +72,31 @@ public class FindNum {
         return flag;
 
 
+
+
+
+    }
+
+
+    //10.12
+    public boolean isExist2(int[][] nums,int target){
+        int len1 = nums.length;
+        int i =0;
+        int j = nums[0].length-1;
+        boolean flag = false;
+        while (i<len1 && j>=0){
+            if(nums[i][j] == target){
+                flag = true;
+                break;
+            }
+            else if(nums[i][j]>target){
+                j--;
+            }else{
+                i++;
+            }
+        }
+
+        return flag;
 
 
 
