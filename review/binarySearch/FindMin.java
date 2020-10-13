@@ -2,7 +2,7 @@ package review.binarySearch;
 
 public class FindMin {
     public static void main(String[] args) {
-        int[] nums = {3,4,5,1,2};
+        int[] nums = {10,1,10,10,10};
         Solution153 s = new Solution153();
         System.out.println(s.findMin(nums));
     }
