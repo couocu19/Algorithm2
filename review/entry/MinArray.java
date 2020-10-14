@@ -31,8 +31,6 @@ class Solution11 {
         }
         return numbers[low];
     }
-
-
     public int minArray1(int[] numbers) {
         int low = 0;
         int high = numbers.length-1;
@@ -52,6 +50,28 @@ class Solution11 {
             }
         }
 
+        return numbers[low];
+    }
+
+
+    public int minArray2(int[] numbers){
+        int len = numbers.length;
+        int low = 0;
+        int high = len-1;
+        int mid;
+        while (low<high){
+            mid = (low+high)/2;
+            if(numbers[mid]<numbers[high]){
+                high = mid;
+            }
+            else if(numbers[mid]>high){
+                low = mid+1;
+            }
+            else{
+                high -=1;
+            }
+
+        }
         return numbers[low];
     }
 }
