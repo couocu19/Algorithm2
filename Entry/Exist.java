@@ -34,9 +34,6 @@ class Solution12 {
         }
 
         return back(0,0,0,0);
-       // backtrack(0,0,0);
-
-        //return res;
     }
 
     private void backtrack(int i,int j,int m){
@@ -70,8 +67,8 @@ class Solution12 {
         }
 
 
-        //todo:改代码
-       private boolean back(int i,int j,int m,int f){
+    //todo:改代码
+    private boolean back(int i,int j,int m,int f){
 
           if(m == word.length()-1) {
               System.out.println("ok");
