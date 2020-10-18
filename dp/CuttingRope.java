@@ -4,8 +4,8 @@ public class CuttingRope {
     public static void main(String[] args) {
 
         Solution14 s = new Solution14();
-        int n = 9;
-        System.out.println(s.cuttingRope(n));
+        int n = 120;
+        System.out.println(s.cuttingRope3(n));
 
     }
 }
@@ -25,7 +25,6 @@ class Solution14 {
         dp[1] = 1;
         dp[2] = 2;
         dp[3] = 3;
-
         for(int i =4;i<=n;i++){
             max = 0;
             for(int j =1;j<=i/2;j++){
@@ -40,6 +39,34 @@ class Solution14 {
         return max;
     }
 
+    public int cuttingRope4(int n){
+        if(n<2)
+            return 0;
+        if(n == 2)
+            return 1;
+        if(n == 3)
+            return 2;
+        int max = 0;
+        int[] dp = new int[n+1];
+        dp[0] = 0;
+        dp[1] = 1;
+        dp[2] = 2;
+        dp[3] = 3;
+
+        for(int i =4;i<=n;i++){
+            max = 0;
+            for(int j =1;j<=i/2;j++){
+                int m = dp[j]*dp[i-j];
+                if(max<m)
+                    max = m;
+            }
+            dp[i] = max;
+
+        }
+        max = dp[n];
+        int f = 1000000007;
+        return max%f;
+    }
     public int cuttingRope1(int n){
         if(n<2)
             return 0;
@@ -79,4 +106,28 @@ class Solution14 {
 
 
     }
+
+    public int cuttingRope3(int n){
+        if(n<2)
+            return 0;
+        if(n == 2)
+            return 1;
+        if(n == 3)
+            return 2;
+
+        int timesOf3 = n/3;
+        if(n-3*timesOf3 == 1){
+            timesOf3-=1;
+        }
+
+        int timesOf2 = (n-3*timesOf3)/2;
+        int f = 1000000007;
+
+        long res = (int)Math.pow(2,timesOf2)*(int)Math.pow(3,timesOf3);
+        long r = res%f;
+
+        return (int)r;
+
+    }
+
 }
