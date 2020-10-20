@@ -4,10 +4,12 @@ public class PrintNumbers {
     public static void main(String[] args) {
         Solution17 s = new Solution17();
        // System.out.println(s.printNumbers(1));
+        int[] res =  s.printNumbers(8);
 
-
-        s.printNumbers(1);
-
+        for(int a:res){
+            System.out.print(a+" ");
+        }
+        System.out.println();
     }
 }
 
@@ -40,6 +42,8 @@ class Solution17s {
         res = new int[(int)Math.pow(10,n)-1];
         num = new char[n];
         start = n-1;
+
+        dfs(0);
 
         return res;
 
