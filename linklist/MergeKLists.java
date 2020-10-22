@@ -183,10 +183,29 @@ class Solution23 {
         }
 
         return resHead.next;
+    }
 
+    public ListNode mergeK(ListNode[] lists){
+        Queue<ListNode> queue = new PriorityQueue<>();
+        for(ListNode node:lists){
+            queue.offer(node);
+        }
 
+        ListNode resHead = new ListNode(0);
+        ListNode tail = resHead;
+        while (!queue.isEmpty()){
+            ListNode minNode = queue.poll();
 
+            tail.next = minNode;
+            tail = tail.next;
 
+            if(minNode.next!=null){
+                queue.offer(minNode.next);
+
+            }
+        }
+
+        return resHead.next;
 
 
 

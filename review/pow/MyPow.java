@@ -45,7 +45,6 @@ class Solution16 {
             x = 1/x;
         }
         while (b>0){
-
             if((b&1) == 1){
                 ret*=x;
             }
@@ -53,5 +52,31 @@ class Solution16 {
             b>>=1;
         }
         return ret;
+    }
+
+    public double myPow2(double x,int n){
+        if(n == 0)
+            return 1;
+        if(n == 1)
+            return x;
+        double ret = 1.0;
+        long b = n;
+        if(n<0){
+            b = -b;
+            x = 1/x;
+        }
+        while (b>0){
+
+            if((b&1) == 1){
+                ret*=x;
+            }
+            x*=x;
+            b>>=1;
+
+        }
+
+        return ret;
+
+
     }
 }

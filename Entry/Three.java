@@ -100,12 +100,11 @@ public class Three {
     public int get3(int[] nums){
         Arrays.sort(nums);
         int len = nums.length;
-        int l;
-        int r;
+
         int count = 0;
         for(int i =len-1;i>1;i--){
-             r = i-1;
-             l = 0;
+            int r = i-1;
+            int l = 0;
             while (l < r) {
                 if (nums[l] + nums[r] <= nums[i]) {
                     l++;
