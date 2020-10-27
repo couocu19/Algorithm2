@@ -10,6 +10,20 @@ public class Construct {
         head.next = null;
         ListNode temp = null;
         ListNode cur = head;
+        for(int i =1;i<=3;i++){
+            temp = new ListNode(i);
+            temp.next = null;
+            cur.next = temp;
+            cur = temp;
+        }
+
+        return head;
+    }
+    public static ListNode sortConstructor2(){
+        ListNode head = new ListNode();
+        head.next = null;
+        ListNode temp = null;
+        ListNode cur = head;
         for(int i =1;i<=6;i++){
             temp = new ListNode(i);
             temp.next = null;
