@@ -35,6 +35,34 @@ class Solution142 {
         return fast;
     }
 
+    public ListNode detectCycle1(ListNode head){
+
+        ListNode cur = head;
+        ListNode fast = head;
+        ListNode slow = head;
+        while (true){
+            if(fast == null || fast.next == null)
+                return null;
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if(fast == slow){
+                break;
+            }
+        }
+
+        fast = head;
+
+        while (slow!=fast){
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow;
+
+
+    }
+
 
 
 }
