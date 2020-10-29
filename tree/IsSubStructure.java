@@ -79,7 +79,7 @@ class Solution26s {
     public boolean isSubStructure(TreeNode A, TreeNode B){
 
         return (A!=null && B!=null) && (recur(A,B) || isSubStructure(A.left,B) || isSubStructure(A.right,B));
-        
+
     }
 
     private boolean recur(TreeNode A,TreeNode B){

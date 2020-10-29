@@ -18,9 +18,9 @@ public class PrintTree {
 
             System.out.print(root.val+" ");
             if(root.left!=null)
-                printAsMid(root.left);
+                printAsPre(root.left);
             if(root.right!=null)
-                printAsMid(root.right);
+                printAsPre(root.right);
         }
 
     }

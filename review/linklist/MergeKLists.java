@@ -1,5 +1,6 @@
 package review.linklist;
 
+import java.awt.*;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -81,6 +82,34 @@ class Solution {
             }
         }
         return resHead.next;
+
+    }
+
+
+    //10.29
+
+    public ListNode merge2(ListNode[] lists){
+        Queue<ListNode> queue = new PriorityQueue<>((v1,v2)->(v1.val-v2.val));
+        for(ListNode l:lists){
+            queue.offer(l);
+        }
+
+        ListNode res = new ListNode(0);
+        ListNode tmp = res;
+
+        while (!queue.isEmpty()){
+            ListNode minNode = queue.poll();
+            tmp.next = minNode;
+            tmp = minNode;
+            if(minNode.next!=null){
+                queue.offer(minNode);
+            }
+        }
+
+        return res.next;
+
+
+
 
     }
 }
