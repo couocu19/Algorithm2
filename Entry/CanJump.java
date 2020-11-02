@@ -41,4 +41,21 @@ class Solution55 {
         }
         return true;
     }
+
+    public boolean canJump2(int[] nums) {
+        int len = nums.length;
+        int rightM = 0;
+        for(int i =0;i<len;i++){
+            if(i<=rightM){
+                rightM = Math.max(rightM,i+nums[i]);
+            }
+
+            if(rightM>=len-1)
+                return true;
+        }
+
+        return false;
+
+
+    }
 }
