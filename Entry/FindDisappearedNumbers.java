@@ -1,5 +1,6 @@
 package Entry;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -37,5 +38,32 @@ class Solution448 {
             }
         }
         return result;
+    }
+
+    public List<Integer> findDisappearedNumbers1(int[] nums){
+        int len = nums.length;
+        List<Integer> list = new ArrayList<>();
+        for(int i =0;i<len;i++){
+            int newIdx = nums[i]-1;
+
+            if(nums[newIdx]>0) {
+                nums[newIdx] *= -1;
+            }
+        }
+
+        for(int i =1;i<=len;i++){
+            if(nums[i-1]>0){
+                list.add(i);
+            }
+        }
+
+        return list;
+
+
+
+
+
+
+
     }
 }
