@@ -155,4 +155,39 @@ class Solution42 {
     }
 
 
+
+    public int trap5(int[] height){
+
+        if(height == null || height.length<2)
+            return 0;
+
+        int len = height.length;
+        int i =0;
+        int j = len-1;
+        int sum = 0;
+        int flagHeight = 0;
+
+        while (i<j){
+            if(height[i]<height[j]){
+                flagHeight = Math.max(flagHeight,height[i]);
+                sum += flagHeight - height[i];
+                i++;
+
+            }else{
+                flagHeight = Math.max(flagHeight,height[j]);
+                sum += flagHeight - height[j];
+                j--;
+            }
+
+        }
+
+        return sum;
+
+
+
+
+
+    }
+
+
 }

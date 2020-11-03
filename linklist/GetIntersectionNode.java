@@ -7,8 +7,7 @@ public class GetIntersectionNode {
     }
 }
 
-
-public class Solution160 {
+class Solution160 {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if(headA == null || headB == null)
             return null;
