@@ -11,7 +11,7 @@ public class BuildTRee {
     }
 
 }
-class Solution {
+class Solution105s {
 
     private Map<Integer,Integer> map = new HashMap<>();
 

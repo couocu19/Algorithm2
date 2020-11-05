@@ -13,7 +13,7 @@ public class Merge {
     }
 }
 
-class Solution {
+class Solution56 {
     public int[][] merge(int[][] intervals) {
 
         Arrays.sort(intervals, new Comparator<int[]>() {

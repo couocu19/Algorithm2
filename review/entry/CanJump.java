@@ -8,7 +8,7 @@ public class CanJump {
     }
 }
 
-class Solution {
+class Solution55 {
     public boolean canJump(int[] nums) {
         int rightMax = 0;
         int len = nums.length;

@@ -8,7 +8,9 @@ public class Exchange {
     }
 }
 
-class Solution {
+
+
+class Solutionn {
     public int[] exchange(int[] nums) {
         int len = nums.length;
         int p = 0;
