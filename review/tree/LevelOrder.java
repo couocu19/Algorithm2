@@ -13,7 +13,7 @@ public class LevelOrder {
     }
 }
 
-class Solution {
+class Solution111 {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         if(root == null)

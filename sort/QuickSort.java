@@ -31,8 +31,6 @@ public class QuickSort {
         while(low<high){
             while(low<high && arr[high]>=key)
                 high--;
-
-           // System.out.println(arr[high]);
             arr[low] = arr[high];
 
             while(low<high && arr[low]<=key)
