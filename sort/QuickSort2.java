@@ -14,9 +14,7 @@ public class QuickSort2 {
 
 
     public static void quick(int[] nums,int low,int high){
-        int len = nums.length;
         if(low<high){
-
             int pos = getPos(nums,low,high);
             quick(nums,low,pos-1);
             quick(nums,pos+1,high);

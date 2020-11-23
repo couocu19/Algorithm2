@@ -10,7 +10,7 @@ public class IsValidBST {
 
 }
 
-class Solution {
+class Solutionttt {
     long pre = Long.MIN_VALUE;
     public boolean isValidBST(TreeNode root) {
         if(root == null)
