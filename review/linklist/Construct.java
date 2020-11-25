@@ -10,14 +10,14 @@ public class Construct {
         head.next = null;
         ListNode temp = null;
         ListNode cur = head;
-        for(int i =1;i<=3;i++){
+        for(int i =1;i<=8;i++){
             temp = new ListNode(i);
             temp.next = null;
             cur.next = temp;
             cur = temp;
         }
 
-        return head;
+        return head.next;
     }
     public static ListNode sortConstructor2(){
         ListNode head = new ListNode();
