@@ -5,7 +5,7 @@ public class ReverseBetween {
         ListNode head = Construct.sortConstructor();
         Construct.printList(head);
         Solution92 s = new Solution92();
-        head = s.reverseBetween(head,2,4);
+        head = s.reverseBetween1(head,2,4);
         Construct.printList(head);
 
 
@@ -57,5 +57,29 @@ class Solution92 {
             cur = next;
         }
         return pre;
+    }
+
+    public ListNode reverseBetween1(ListNode head, int m, int n) {
+        ListNode p = new ListNode(0);
+        p.next = head;
+        ListNode tmp = p;
+        for(int i =1;i<m;i++){
+            tmp = tmp.next;
+        }
+        ListNode pre = null;
+        ListNode cur = tmp.next;
+        ListNode next = null;
+        for(int i = m;i <= n;i++){
+            next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        //前接
+        tmp.next.next = cur;
+        //后接
+        tmp.next = pre;
+
+        return p.next;
     }
 }
