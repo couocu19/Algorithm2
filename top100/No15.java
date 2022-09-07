@@ -47,10 +47,11 @@ class Solution15 {
                     list = new ArrayList<>();
                     l++;
                     r--;
-                    if(l<r && nums[l] == nums[l-1])
-                        continue;
-                    if(r>l && nums[r] == nums[r+1])
-                        continue;
+                    //很好，温故知新啊哈哈哈哈
+                    while(l<r && nums[l] == nums[l-1])
+                        l++;
+                    while(l<r && nums[r] == nums[r+1])
+                        r--;
                 }
             }
         }
