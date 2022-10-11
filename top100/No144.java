@@ -13,7 +13,6 @@ public class No144 {
 
 class Solution144 {
     public List<Integer> preorderTraversal(TreeNode root) {
-
-
+        return null;
     }
 }
