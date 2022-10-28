@@ -21,8 +21,8 @@ public class GetFtlareas {
 
         GetFtlareas g = new GetFtlareas();
         g.getChrRanks();
-        //  System.out.println(g.writeArea2File(fp,nfp));
-        System.out.println(g.writeNewArea2File(fp1,nfp1));
+          System.out.println(g.writeArea2File(fp,nfp));
+        //System.out.println(g.writeNewArea2File(fp1,nfp1));
     }
 
     /**
@@ -56,7 +56,7 @@ public class GetFtlareas {
                     sb.append("\n");
                     i++;
                     fw.write(sb.toString());
-                    flag = "0";
+                    flag = String.valueOf(lns1[i]+1);
                 }
                 chrName = sline[0];
                 sb = new StringBuilder(chrName); //todo:还需要单独处理两条染色体间隔的情况！！！
