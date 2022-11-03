@@ -14,17 +14,20 @@ public class countLayersNum {
         int total = 24521708;
         int match_total = 16532532;
         String path = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\1.r";
-        int[] lyseq = s.count(layers,ln,total,path,match_total);
+        String path1 = "D:\\protein-data-set\\yeast\\res-teat\\1.r";
+        int[] lyseq = s.count(layers,ln,total,path1,match_total);
         int[] res = s.transfer(lyseq);
       //  res = s.reverse(res);
         for(int i = 0;i<res.length;i++){
             System.out.print(res[i]+" ");
         }
         System.out.println();
-
         String bed_path = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\fanse-4257.bed";
         String split_dir = "D:\\protein-data-set\\yeast\\SRR4072457\\split-bed-data-res2\\split1\\";
-        System.out.println(s.splitBedData(bed_path,split_dir,res));
+
+        String bed_path1 = "D:\\protein-data-set\\yeast\\res-teat\\new-fanse-4257.bed";
+        String split_dir1 = "D:\\protein-data-set\\yeast\\SRR4072457\\split-teat\\split2\\";
+        System.out.println(s.splitBedData(bed_path1,split_dir1,res));
 
     }
     /**
@@ -131,7 +134,7 @@ public class countLayersNum {
 //                bw.write("\n");
 //            }
             for(int i = 1;i<=306;i++){
-                System.out.println("分割第"+i+"个文件");
+               // System.out.println("分割第"+i+"个文件");
                 BufferedReader br = new BufferedReader(new FileReader(bed_path));
                 c = String.valueOf(i);
                 sp_data_path = split_dir+c+".bed";

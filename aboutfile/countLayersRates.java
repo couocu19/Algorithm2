@@ -8,11 +8,15 @@ import java.util.List;
 public class countLayersRates {
     public static void main(String[] args) {
         double[] ln = {230218,813184,316620,1531933,576874,270161,1090940,562643,439888,745751,666816,778177,924431,784333,1091291,948066,85779};
+        countLayersRates c = new countLayersRates();
+        String path = "D:\\protein-data-set\\yeast\\SRR4072457\\split-bed-data-res2\\res\\";
+        System.out.println(c.count(ln,path,306));
+     //   System.out.println(c.count(ln,path,306).size());
 
     }
 
     //todo:核对正确性，测试！！
-    public int count(double[] ln, String dir_path,int file_num){
+    public List<Double> count(double[] ln, String dir_path,int file_num){
         int total_len = 0;
         int len1 = ln.length;
         for(int i = 0;i<len1;i++){
@@ -22,7 +26,7 @@ public class countLayersRates {
         double[] flag  = new double[17];
         for(int i = 1;i<=file_num;i++){ //遍历每一个bed文件
             String c = String.valueOf(i);
-            String fp  = dir_path+c+".bed";
+            String fp  = dir_path+"c"+c+".bed";
             try {
                 BufferedReader br = new BufferedReader(new FileReader(fp));
                 String line;
@@ -46,8 +50,7 @@ public class countLayersRates {
         }
 
 
-
-        return 0;
+        return list;
 
 
     }
@@ -59,7 +62,7 @@ public class countLayersRates {
             res += rates[i] * (ln[i]/total);
 
         }
-        System.out.println(res);
+      //  System.out.println(res);
         return res;
     }
 

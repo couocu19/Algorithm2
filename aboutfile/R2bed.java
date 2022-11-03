@@ -26,7 +26,7 @@ public class R2bed {
         String dir_path2 = "D:\\protein-data-set\\yeast\\res-teat\\";
         String bed_path2 = "D:\\protein-data-set\\yeast\\res-teat\\new-fanse-4257.bed";
 
-        int f = r.get_r2bed(dir_path2,list,bed_path2);
+        int f = r.get_r2bed(dir_path1,list,bed_path1);
         System.out.println(f);
 
     }
@@ -110,6 +110,8 @@ public class R2bed {
                         j++;
 
                     }
+                    System.out.println(j);
+                    bw.close();
 
 
                 } catch (Exception ex) {
@@ -118,7 +120,6 @@ public class R2bed {
                     break;
                 }
             }
-            bw.close();
         }catch (Exception ex){
             ex.printStackTrace();
             return -1;
