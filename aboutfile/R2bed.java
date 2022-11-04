@@ -26,7 +26,7 @@ public class R2bed {
         String dir_path2 = "D:\\protein-data-set\\yeast\\res-teat\\";
         String bed_path2 = "D:\\protein-data-set\\yeast\\res-teat\\new-fanse-4257.bed";
 
-        int f = r.get_r2bed(dir_path1,list,bed_path1);
+        int f = r.get_r2bed(dir_path2,list,bed_path2);
         System.out.println(f);
 
     }

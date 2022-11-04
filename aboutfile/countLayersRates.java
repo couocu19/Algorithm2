@@ -10,7 +10,8 @@ public class countLayersRates {
         double[] ln = {230218,813184,316620,1531933,576874,270161,1090940,562643,439888,745751,666816,778177,924431,784333,1091291,948066,85779};
         countLayersRates c = new countLayersRates();
         String path = "D:\\protein-data-set\\yeast\\SRR4072457\\split-bed-data-res2\\res\\";
-        System.out.println(c.count(ln,path,306));
+        String path1 = "D:\\protein-data-set\\yeast\\SRR4072457\\split-teat\\res\\";
+        System.out.println(c.count(ln,path1,306));
      //   System.out.println(c.count(ln,path,306).size());
 
     }
@@ -24,7 +25,7 @@ public class countLayersRates {
         }
         List<Double> list = new ArrayList<>();
         double[] flag  = new double[17];
-        for(int i = 1;i<=file_num;i++){ //遍历每一个bed文件
+        for(int i = 106;i<=file_num;i++){ //遍历每一个bed文件
             String c = String.valueOf(i);
             String fp  = dir_path+"c"+c+".bed";
             try {

@@ -1,9 +1,11 @@
 package aboutfile;
 
+import javax.management.ObjectName;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.*;
+import java.util.function.IntBinaryOperator;
 
 public class GetFtlareas {
    String[] lns = {"230218","1043403","1360024","2891958","3468833","3738995","4829936","5392580","5832469",
@@ -57,7 +59,9 @@ public class GetFtlareas {
                     i++;
                     fw.write(sb.toString());
                     flag = String.valueOf(lns1[i]+1);
+
                 }
+
                 chrName = sline[0];
                 sb = new StringBuilder(chrName); //todo:还需要单独处理两条染色体间隔的情况！！！
                 sb.append("\t");
@@ -66,6 +70,7 @@ public class GetFtlareas {
                 sb.append(sline[1]);
                 sb.append("\t");
                 sb.append(getAreaLen(flag,sline[1]));
+
                 sb.append("\t");
                 sb.append(getAreaRank(i,flag,sline[1]));
                 sb.append("\n");
