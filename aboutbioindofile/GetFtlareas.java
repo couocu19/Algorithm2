@@ -1,11 +1,9 @@
-package aboutfile;
+package aboutbioindofile;
 
-import javax.management.ObjectName;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.*;
-import java.util.function.IntBinaryOperator;
 
 public class GetFtlareas {
    String[] lns = {"230218","1043403","1360024","2891958","3468833","3738995","4829936","5392580","5832469",

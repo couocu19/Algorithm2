@@ -1,4 +1,4 @@
-package aboutfile;
+package aboutbioindofile;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

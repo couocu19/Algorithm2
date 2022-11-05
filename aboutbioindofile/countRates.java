@@ -1,4 +1,4 @@
-package aboutfile;
+package aboutbioindofile;
 
 public class countRates {
     public static void main(String[] args) {

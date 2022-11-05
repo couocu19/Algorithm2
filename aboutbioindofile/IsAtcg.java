@@ -1,8 +1,7 @@
-package aboutfile;
+package aboutbioindofile;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.nio.Buffer;
 
 public class IsAtcg {
     public static void main(String[] args) {

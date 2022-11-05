@@ -1,9 +1,4 @@
-package aboutfile;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+package aboutbioindofile;
 
 public class countSeq2File {
     public static void main(String[] args) {
