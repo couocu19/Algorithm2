@@ -19,9 +19,15 @@ public class GetFtlareas {
         String fp1 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\new-covered.bed";
         String nfp1 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\new-covered.csv";
 
+        String fp2 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\new-covered.bed";
+        String nfp2 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\new-covered.csv";
+
+        String fp3 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new.bed";
+        String nfp3 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl.csv";
+
         GetFtlareas g = new GetFtlareas();
         g.getChrRanks();
-          System.out.println(g.writeArea2File(fp,nfp));
+          System.out.println(g.writeArea2File(fp3,nfp3));
         //System.out.println(g.writeNewArea2File(fp1,nfp1));
     }
 

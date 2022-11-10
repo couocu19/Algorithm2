@@ -93,10 +93,15 @@ public class BwaBed2Fbed {
         String path5 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\new-covered.bed";
         String new_path5 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\new-covered-bw.bed";
 
+        String path6 = "D:\\protein-data-set\\yeast\\res-teat\\sf4257-new.bed";
+        String new_path6 = "D:\\protein-data-set\\yeast\\res-teat\\sf4257-new-bw.bed";
+
+        String path7 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\sf4257.bed";
+        String new_path7 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\sf4257-bw.bed";
+
 
         BwaBed2Fbed bwaBed2Fbed = new BwaBed2Fbed();
-        System.out.println( bwaBed2Fbed.transferBwaIdx1(path4,new_path4));
-
+        System.out.println( bwaBed2Fbed.transferBwaIdx1(path7,new_path7));
 
     }
     public int transferBwaIdx(String file_path,String new_file_path){
