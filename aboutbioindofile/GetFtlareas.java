@@ -23,12 +23,16 @@ public class GetFtlareas {
         String nfp2 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\new-covered.csv";
 
         String fp3 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new.bed";
-        String nfp3 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl.csv";
+       // String nfp3 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl.csv";
+        String nfp3 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl-smpl.csv";
+
+        String fp4 = "D:\\protein-data-set\\yeast\\res-teat\\right-ftl\\r-covered-fs.bed";
+        String nfp4 = "D:\\protein-data-set\\yeast\\res-teat\\right-ftl\\r-covered.csv";
 
         GetFtlareas g = new GetFtlareas();
         g.getChrRanks();
           System.out.println(g.writeArea2File(fp3,nfp3));
-        //System.out.println(g.writeNewArea2File(fp1,nfp1));
+        //System.out.println(g.writeNewArea2File(fp4,nfp4));
     }
 
     /**
@@ -55,10 +59,10 @@ public class GetFtlareas {
                     sb.append(flag);
                     sb.append("\t");
                     sb.append(lns[i]);
-                    sb.append("\t");
-                    sb.append(getAreaLen(flag,lns[i]));
-                    sb.append("\t");
-                    sb.append(getAreaRank(i,flag,lns[i]));
+                    //sb.append("\t");
+                    //sb.append(getAreaLen(flag,lns[i]));
+                    //sb.append("\t");
+                    //sb.append(getAreaRank(i,flag,lns[i]));
                     sb.append("\n");
                     i++;
                     fw.write(sb.toString());
@@ -73,10 +77,9 @@ public class GetFtlareas {
                 sb.append("\t");
                 sb.append(sline[1]);
                 sb.append("\t");
-                sb.append(getAreaLen(flag,sline[1]));
-
-                sb.append("\t");
-                sb.append(getAreaRank(i,flag,sline[1]));
+//                sb.append(getAreaLen(flag,sline[1]));
+//                sb.append("\t");
+//                sb.append(getAreaRank(i,flag,sline[1]));
                 sb.append("\n");
                 flag = sline[2];
                 fw.write(sb.toString());
