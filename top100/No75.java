@@ -10,8 +10,6 @@ public class No75 {
         }
 
 
-
-
     }
 }
 

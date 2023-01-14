@@ -29,9 +29,11 @@ public class GetFtlareas {
         String fp4 = "D:\\protein-data-set\\yeast\\res-teat\\right-ftl\\r-covered-fs.bed";
         String nfp4 = "D:\\protein-data-set\\yeast\\res-teat\\right-ftl\\r-covered.csv";
 
+        String fp5 = "D:\\fanse-work-test\\fm160.bed";
+        String nfp5 = "D:\\fanse-work-test\\fm160-ftl.bed";
         GetFtlareas g = new GetFtlareas();
         g.getChrRanks();
-          System.out.println(g.writeArea2File(fp3,nfp3));
+          System.out.println(g.writeArea2File(fp5,nfp5));
         //System.out.println(g.writeNewArea2File(fp4,nfp4));
     }
 
@@ -59,10 +61,10 @@ public class GetFtlareas {
                     sb.append(flag);
                     sb.append("\t");
                     sb.append(lns[i]);
-                    //sb.append("\t");
-                    //sb.append(getAreaLen(flag,lns[i]));
-                    //sb.append("\t");
-                    //sb.append(getAreaRank(i,flag,lns[i]));
+                    sb.append("\t");
+                    sb.append(getAreaLen(flag,lns[i]));
+                    sb.append("\t");
+                    sb.append(getAreaRank(i,flag,lns[i]));
                     sb.append("\n");
                     i++;
                     fw.write(sb.toString());
@@ -77,9 +79,9 @@ public class GetFtlareas {
                 sb.append("\t");
                 sb.append(sline[1]);
                 sb.append("\t");
-//                sb.append(getAreaLen(flag,sline[1]));
-//                sb.append("\t");
-//                sb.append(getAreaRank(i,flag,sline[1]));
+              sb.append(getAreaLen(flag,sline[1]));
+                sb.append("\t");
+               sb.append(getAreaRank(i,flag,sline[1]));
                 sb.append("\n");
                 flag = sline[2];
                 fw.write(sb.toString());

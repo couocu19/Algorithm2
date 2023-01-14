@@ -32,8 +32,11 @@ public class SNPfile {
     public static void main(String[] args) {
         String path = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl-smpl-bw.csv";
         String new_path = "D:\\protein-data-set\\yeast\\res-teat\\SNP-4257new.csv";
+
+        String path1 = "D:\\fanse-work-test\\fm160-ftl-bw.csv";
+        String new_path1 = "D:\\fanse-work-test\\SNP-fm160-ftl.csv";
         SNPfile s = new SNPfile();
-        System.out.println(s.write2File(path,new_path));
+        System.out.println(s.write2File(path1,new_path1));
 
 
     }

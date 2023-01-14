@@ -119,6 +119,66 @@ public class countRates {
                 0.0017035,
                 0.0270929
         };
+        //调参后的rates
+        double[] rates10 = {
+                0.8449643,
+                0.9805936,
+                0.9873981,
+                0.9697546,
+                0.9570426,
+                0.9410722,
+                0.9522274,
+                0.9367805,
+                0.9253060,
+                0.9377111,
+                0.9656667,
+                0.9147854,
+                0.9621518,
+                0.9616272,
+                0.9536998,
+                0.9533724,
+                0.6457991
+        };
+
+        double[] rates11 = {
+                0.0049084,
+                0.0015987,
+                0.0020277,
+                0.0019779,
+                0.0017213,
+                0.0039791,
+                0.0023411,
+                0.0042283,
+                0.0041465,
+                0.0032383,
+                0.0015956,
+                0.0119498,
+                0.0019774,
+                0.0023064,
+                0.0028315,
+                0.0021391,
+                0.0310799
+        };
+
+        double[] rates12 = {
+                0.1574725,
+                0.1705002,
+                0.1807687,
+                0.1581375,
+                0.1576167,
+                0.1686698,
+                0.1598869,
+                0.1611501,
+                0.1528434,
+                0.1609022,
+                0.1616458,
+                0.1727861,
+                0.1638435,
+                0.1586405,
+                0.1710515,
+                0.1558098,
+                0.1865025
+        };
 
 
         int total_len = 0;
@@ -132,17 +192,17 @@ public class countRates {
         double avg_r4 = 0;
         for(int i = 0;i<len1;i++){
             avg_r1 +=  (ln[i]/total_len) * rates9[i];
-            avg_r2 +=  (ln[i]/total_len) * rates8[i];
-            avg_r3 +=  (ln[i]/total_len) * rates3[i];
-            avg_r4 +=  (ln[i]/total_len) * rates4[i];
+            avg_r2 +=  (ln[i]/total_len) * rates11[i];
+            avg_r3 +=  (ln[i]/total_len) * rates12[i];
+            avg_r4 +=  (ln[i]/total_len) * rates10[i];
 //            System.out.println(avg_r1);
 //            System.out.println(avg_r2);
 //            System.out.println(avg_r3);
 
         }
         System.out.println(total_len);
-        System.out.println(avg_r1);
         System.out.println(avg_r2);
+        System.out.println(avg_r3);
         System.out.println(avg_r4);
 
 

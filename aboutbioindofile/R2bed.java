@@ -11,8 +11,9 @@ public class R2bed {
         String index_path = "D:/protein-data-set/831-testdata/fast_index.txt";
         String index_path1 = "D:/giraffe/fanse2-res2/fast_index.txt";
         String index_path2 = "D:/protein-data-set/yeast/res-teat/fast_index.txt";
+        String index_path3 = "D:\\fanse-work-test\\fast_index.txt";
 
-        List<ChrIndexInfo> list = r.get_fast_idx_file(index_path2);
+        List<ChrIndexInfo> list = r.get_fast_idx_file(index_path3);
         for(ChrIndexInfo a : list){
             System.out.print(a.fileSeq +" "+a.chrName+" "+a.chrIndex);
             System.out.println();
@@ -26,7 +27,10 @@ public class R2bed {
         String dir_path2 = "D:\\protein-data-set\\yeast\\res-teat\\";
         String bed_path2 = "D:\\protein-data-set\\yeast\\res-teat\\new-fanse-4257.bed";
 
-        int f = r.get_r2bed(dir_path2,list,bed_path2);
+        String dir_path3 = "D:\\fanse-work-test\\";
+        String bed_path3 = "D:\\fanse-work-test\\fanse-160-4257.bed";
+
+        int f = r.get_r2bed(dir_path3,list,bed_path3);
         System.out.println(f);
 
     }

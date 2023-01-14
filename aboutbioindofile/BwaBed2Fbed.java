@@ -108,9 +108,16 @@ public class BwaBed2Fbed {
         String path10 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl-smpl.csv";
         String new_path10= "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl-smpl-bw.csv";
 
+        //调整参数后得到的排序fanse文件
+        String path11 = "D:\\fanse-work-test\\fm160.bed";
+        String new_path11= "D:\\fanse-work-test\\fm160-bw.bed";
+
+        String path12 = "D:\\fanse-work-test\\fm160-ftl.csv";
+        String new_path12= "D:\\fanse-work-test\\fm160-ftl-bw.csv";
+
 
         BwaBed2Fbed bwaBed2Fbed = new BwaBed2Fbed();
-        System.out.println( bwaBed2Fbed.transferBwaIdx1(path10,new_path10));
+        System.out.println( bwaBed2Fbed.transferBwaIdx1(path11,new_path11));
 
     }
     public int transferBwaIdx(String file_path,String new_file_path){
