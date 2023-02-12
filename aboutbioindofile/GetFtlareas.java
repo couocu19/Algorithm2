@@ -12,9 +12,50 @@ public class GetFtlareas {
             6578221,7245038,8323216,9247648,10031982,11123274,12071341};
     List<Map<Integer,Integer>> map_all = new ArrayList<>();
 
+    Map<String,String> mapChr = new HashMap<>(){
+        {
+//            put("ref|NC_001133|","chr1");
+//            put("ref|NC_001134|","chr2");
+//            put("ref|NC_001135|","chr3");
+//            put("ref|NC_001136|","chr4");
+//            put("ref|NC_001137|","chr5");
+//            put("ref|NC_001138|","chr6");
+//            put("ref|NC_001139|","chr7");
+//            put("ref|NC_001140|","chr8");
+//            put("ref|NC_001141|","chr9");
+//            put("ref|NC_001142|","chr10");
+//            put("ref|NC_001143|","chr11");
+//            put("ref|NC_001144|","chr12");
+//            put("ref|NC_001145|","chr13");
+//            put("ref|NC_001146|","chr14");
+//            put("ref|NC_001147|","chr15");
+//            put("ref|NC_001148|","chr16");
+//            put("ref|NC_001224|","chr17");
+            put("NC_001133.9","chr1");
+            put("NC_001134.8","chr2");
+            put("NC_001135.5","chr3");
+            put("NC_001136.10","chr4");
+            put("NC_001137.3","chr5");
+            put("NC_001138.5","chr6");
+            put("NC_001139.9","chr7");
+            put("NC_001140.6","chr8");
+            put("NC_001141.2","chr9");
+            put("NC_001142.9","chr10");
+            put("NC_001143.9","chr11");
+            put("NC_001144.5","chr12");
+            put("NC_001145.3","chr13");
+            put("NC_001146.8","chr14");
+            put("NC_001147.6","chr15");
+            put("NC_001148.4","chr16");
+            put("NC_001224.1","chr17");
+
+        }
+    };
+
     public static void main(String[] args) {
         String fp = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257.bed";
         String nfp = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257-ftl.csv";
+        String nfpp = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257-ftl-smpl.csv";
 
         String fp1 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\new-covered.bed";
         String nfp1 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\new-covered.csv";
@@ -26,14 +67,26 @@ public class GetFtlareas {
        // String nfp3 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl.csv";
         String nfp3 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl-smpl.csv";
 
+//        String fp6 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new.bed";
+//        // String nfp3 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl.csv";
+//        String nfp6 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl-smpl.csv";
+
         String fp4 = "D:\\protein-data-set\\yeast\\res-teat\\right-ftl\\r-covered-fs.bed";
         String nfp4 = "D:\\protein-data-set\\yeast\\res-teat\\right-ftl\\r-covered.csv";
 
         String fp5 = "D:\\fanse-work-test\\fm160.bed";
         String nfp5 = "D:\\fanse-work-test\\fm160-ftl.bed";
+
+        String fp7 = "D:\\fanse-work-test\\fm160.bed";
+        String nfp7 = "D:\\fanse-work-test\\fm160-all.bed";
+
+        String fp8 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257.bed";
+        String nfp8 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257-all.bed";
         GetFtlareas g = new GetFtlareas();
         g.getChrRanks();
-          System.out.println(g.writeArea2File(fp5,nfp5));
+
+        //System.out.println(g.writeArea2File(fp7,nfp7));
+        System.out.println(g.writeAllArea2File(fp8,nfp8));
         //System.out.println(g.writeNewArea2File(fp4,nfp4));
     }
 
@@ -96,6 +149,94 @@ public class GetFtlareas {
             sb.append("\t");
             sb.append(getAreaRank(i,flag,lns[i]));
 
+            sb.append("\n");
+            fw.write(sb.toString());
+
+            br.close();
+            fw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+
+        return 0;
+    }
+
+
+    /**
+     * 将匹配区域和未匹配区域写入新文件中
+     * @param file_path
+     * @param new_file_path
+     * @return
+     */
+    public int writeAllArea2File(String file_path, String new_file_path) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file_path));
+            FileWriter fw = new FileWriter(new_file_path);
+            String line = "";
+            String[] sline;
+            String chrName = "";
+            String flag = "0";
+            StringBuilder sb ;
+            int i = 0;
+            while ((line = br.readLine()) != null) {
+                sline = line.split("\t");
+                if((!chrName.equals("")) && (!sline[0].equals(chrName))){
+                    //未匹配区间
+                    sb = new StringBuilder(chrName);
+                    sb.append("\t");
+                    sb.append(flag);
+                    sb.append("\t");
+                    sb.append(lns[i]);
+                    sb.append("\t");
+                    sb.append(mapChr.get(chrName));
+                    sb.append("\t");
+                    sb.append("not-covered");
+                    //sb.append("\t");
+                    sb.append("\n");
+                    i++;
+                    //写入
+                    fw.write(sb.toString());
+                    flag = String.valueOf(lns1[i]+1);
+
+                    //匹配区间
+                    fw.write(line);
+                    fw.write("\t");
+                    fw.write(mapChr.get(chrName));
+                    fw.write("\t");
+                    fw.write("covered");
+                    fw.write("\t");
+                    fw.write("\n");
+
+                }
+                chrName = sline[0];
+                sb = new StringBuilder(chrName); //todo:还需要单独处理两条染色体间隔的情况！！！
+                sb.append("\t");
+                sb.append(flag);
+                sb.append("\t");
+                sb.append(sline[1]);
+                sb.append("\t");
+                sb.append(mapChr.get(chrName));
+                sb.append("\t");
+                sb.append("not-covered");
+                //sb.append("\t");
+                sb.append("\n");
+                flag = sline[2];
+                fw.write(sb.toString());
+
+                fw.write(line);
+                fw.write("\t");
+                fw.write(mapChr.get(chrName));
+                fw.write("\t");
+                fw.write("covered");
+                //fw.write("\t");
+                fw.write("\n");
+            }
+            sb = new StringBuilder(chrName);
+            sb.append("\t");
+            sb.append(flag);
+            sb.append("\t");
+            sb.append(lns[i]);
             sb.append("\n");
             fw.write(sb.toString());
 

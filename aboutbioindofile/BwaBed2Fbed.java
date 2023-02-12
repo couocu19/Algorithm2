@@ -13,40 +13,40 @@ public class BwaBed2Fbed {
 
     Map<String,Integer> chrSeq2Num = new HashMap<>(){
         {
-//            put("NC_001133.9",1);
-//            put("NC_001134.8",2);
-//            put("NC_001135.5",3);
-//            put("NC_001136.10",4);
-//            put("NC_001137.3",5);
-//            put("NC_001138.5",6);
-//            put("NC_001139.9",7);
-//            put("NC_001140.6",8);
-//            put("NC_001141.2",9);
-//            put("NC_001142.9",10);
-//            put("NC_001143.9",11);
-//            put("NC_001144.5",12);
-//            put("NC_001145.3",13);
-//            put("NC_001146.8",14);
-//            put("NC_001147.6",15);
-//            put("NC_001148.4",16);
-//            put("NC_001224.1",17);
-            put("ref|NC_001133|",1);
-            put("ref|NC_001134|",2);
-            put("ref|NC_001135|",3);
-            put("ref|NC_001136|",4);
-            put("ref|NC_001137|",5);
-            put("ref|NC_001138|",6);
-            put("ref|NC_001139|",7);
-            put("ref|NC_001140|",8);
-            put("ref|NC_001141|",9);
-            put("ref|NC_001142|",10);
-            put("ref|NC_001143|",11);
-            put("ref|NC_001144|",12);
-            put("ref|NC_001145|",13);
-            put("ref|NC_001146|",14);
-            put("ref|NC_001147|",15);
-            put("ref|NC_001148|",16);
-            put("ref|NC_001224|",17);
+            put("NC_001133.9",1);
+            put("NC_001134.8",2);
+            put("NC_001135.5",3);
+            put("NC_001136.10",4);
+            put("NC_001137.3",5);
+            put("NC_001138.5",6);
+            put("NC_001139.9",7);
+            put("NC_001140.6",8);
+            put("NC_001141.2",9);
+            put("NC_001142.9",10);
+            put("NC_001143.9",11);
+            put("NC_001144.5",12);
+            put("NC_001145.3",13);
+            put("NC_001146.8",14);
+            put("NC_001147.6",15);
+            put("NC_001148.4",16);
+            put("NC_001224.1",17);
+//            put("ref|NC_001133|",1);
+//            put("ref|NC_001134|",2);
+//            put("ref|NC_001135|",3);
+//            put("ref|NC_001136|",4);
+//            put("ref|NC_001137|",5);
+//            put("ref|NC_001138|",6);
+//            put("ref|NC_001139|",7);
+//            put("ref|NC_001140|",8);
+//            put("ref|NC_001141|",9);
+//            put("ref|NC_001142|",10);
+//            put("ref|NC_001143|",11);
+//            put("ref|NC_001144|",12);
+//            put("ref|NC_001145|",13);
+//            put("ref|NC_001146|",14);
+//            put("ref|NC_001147|",15);
+//            put("ref|NC_001148|",16);
+//            put("ref|NC_001224|",17);
         }
     };
 
@@ -115,9 +115,21 @@ public class BwaBed2Fbed {
         String path12 = "D:\\fanse-work-test\\fm160-ftl.csv";
         String new_path12= "D:\\fanse-work-test\\fm160-ftl-bw.csv";
 
+        String path13 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257-ftl.csv";
+        String new_path13= "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257-ftl-bw.csv";
+
+        String path14 = "D:\\fanse-work-test\\fm160-all.bed";
+        String new_path14= "D:\\fanse-work-test\\fm160-all-bw.bed";
+
+        String path15 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257-bw.bed";
+        String new_path15= "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257.bed";
+
+        String path16 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257-all.bed";
+        String new_path16= "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257-all-bw.bed";
+
 
         BwaBed2Fbed bwaBed2Fbed = new BwaBed2Fbed();
-        System.out.println( bwaBed2Fbed.transferBwaIdx1(path11,new_path11));
+        System.out.println( bwaBed2Fbed.transferBwaIdx1(path16,new_path16));
 
     }
     public int transferBwaIdx(String file_path,String new_file_path){
@@ -181,8 +193,8 @@ public class BwaBed2Fbed {
                     Integer inc = chrNum2len.get(chrSeq-1);
                     l -= inc;    //todo:修改处
                     r -= inc;
-                //    l += inc;
-                 //   r += inc;
+                    //l += inc;
+                    //r += inc;
                     idx_l = String.valueOf(l);
                     idx_r = String.valueOf(r);
                 }
@@ -192,6 +204,12 @@ public class BwaBed2Fbed {
                 sb.append(idx_l);
                 sb.append("\t");
                 sb.append(idx_r);
+                //201~206临时添加
+                sb.append("\t");
+                sb.append(sline[3]);
+                sb.append("\t");
+                sb.append(sline[4]);
+                sb.append("\t");
                 sb.append("\n");
                 fw.write(sb.toString());
             }

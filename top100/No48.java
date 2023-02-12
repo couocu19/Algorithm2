@@ -20,12 +20,11 @@ class Solution48 {
                 matrix[j][i] = tmp;
             }
         }
-
         //左右翻转
         for(int i = 0;i<m;i++){
             for(int j = 0;j<n/2;j++){
                 int tmp = matrix[i][j];
-                matrix[i][j] = matrix[i][n-j-i];
+                matrix[i][j] = matrix[i][n-j-1];
                 matrix[i][n-1-j] = tmp;
             }
         }
