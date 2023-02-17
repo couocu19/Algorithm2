@@ -60,8 +60,14 @@ public class SNPfile {
 
         String path2 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257-ftl-bw.csv";
         String new_path2 = "D:\\fanse-work-test\\SNP-mf4257-old-ftl.csv";
+
+        String path3 = "D:\\fanse-work-test\\fatel-read-file\\r-covered-bw.bed";
+        String new_path3 = "D:\\fanse-work-test\\fatel-read-file\\SNP-f160-new.bed";
+
+        String path4 = "D:\\Rbio\\new-covered-bw.bed";
+        String new_path4 = "D:\\Rbio\\SNP-new-old.bed";
         SNPfile s = new SNPfile();
-        System.out.println(s.write2File(path2,new_path2));
+        System.out.println(s.write2File(path4,new_path4));
     }
 
     public int write2File(String path,String npath){

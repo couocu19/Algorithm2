@@ -14,40 +14,40 @@ public class GetFtlareas {
 
     Map<String,String> mapChr = new HashMap<>(){
         {
-//            put("ref|NC_001133|","chr1");
-//            put("ref|NC_001134|","chr2");
-//            put("ref|NC_001135|","chr3");
-//            put("ref|NC_001136|","chr4");
-//            put("ref|NC_001137|","chr5");
-//            put("ref|NC_001138|","chr6");
-//            put("ref|NC_001139|","chr7");
-//            put("ref|NC_001140|","chr8");
-//            put("ref|NC_001141|","chr9");
-//            put("ref|NC_001142|","chr10");
-//            put("ref|NC_001143|","chr11");
-//            put("ref|NC_001144|","chr12");
-//            put("ref|NC_001145|","chr13");
-//            put("ref|NC_001146|","chr14");
-//            put("ref|NC_001147|","chr15");
-//            put("ref|NC_001148|","chr16");
-//            put("ref|NC_001224|","chr17");
-            put("NC_001133.9","chr1");
-            put("NC_001134.8","chr2");
-            put("NC_001135.5","chr3");
-            put("NC_001136.10","chr4");
-            put("NC_001137.3","chr5");
-            put("NC_001138.5","chr6");
-            put("NC_001139.9","chr7");
-            put("NC_001140.6","chr8");
-            put("NC_001141.2","chr9");
-            put("NC_001142.9","chr10");
-            put("NC_001143.9","chr11");
-            put("NC_001144.5","chr12");
-            put("NC_001145.3","chr13");
-            put("NC_001146.8","chr14");
-            put("NC_001147.6","chr15");
-            put("NC_001148.4","chr16");
-            put("NC_001224.1","chr17");
+            put("ref|NC_001133|","chr1");
+            put("ref|NC_001134|","chr2");
+            put("ref|NC_001135|","chr3");
+            put("ref|NC_001136|","chr4");
+            put("ref|NC_001137|","chr5");
+            put("ref|NC_001138|","chr6");
+            put("ref|NC_001139|","chr7");
+            put("ref|NC_001140|","chr8");
+            put("ref|NC_001141|","chr9");
+            put("ref|NC_001142|","chr10");
+            put("ref|NC_001143|","chr11");
+            put("ref|NC_001144|","chr12");
+            put("ref|NC_001145|","chr13");
+            put("ref|NC_001146|","chr14");
+            put("ref|NC_001147|","chr15");
+            put("ref|NC_001148|","chr16");
+            put("ref|NC_001224|","chr17");
+//            put("NC_001133.9","chr1");
+//            put("NC_001134.8","chr2");
+//            put("NC_001135.5","chr3");
+//            put("NC_001136.10","chr4");
+//            put("NC_001137.3","chr5");
+//            put("NC_001138.5","chr6");
+//            put("NC_001139.9","chr7");
+//            put("NC_001140.6","chr8");
+//            put("NC_001141.2","chr9");
+//            put("NC_001142.9","chr10");
+//            put("NC_001143.9","chr11");
+//            put("NC_001144.5","chr12");
+//            put("NC_001145.3","chr13");
+//            put("NC_001146.8","chr14");
+//            put("NC_001147.6","chr15");
+//            put("NC_001148.4","chr16");
+//            put("NC_001224.1","chr17");
 
         }
     };
@@ -82,11 +82,17 @@ public class GetFtlareas {
 
         String fp8 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257.bed";
         String nfp8 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\mf4257-all.bed";
+
+        String fp9 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\new-covered.bed";
+        String nfp9 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\new-covered-all.bed";
+
+        String fp10 = "D:\\fanse-work-test\\fatel-read-file\\r-covered.bed";
+        String nfp10 = "D:\\fanse-work-test\\fatel-read-file\\r-covered-all.bed";
         GetFtlareas g = new GetFtlareas();
         g.getChrRanks();
 
         //System.out.println(g.writeArea2File(fp7,nfp7));
-        System.out.println(g.writeAllArea2File(fp8,nfp8));
+        System.out.println(g.writeAllArea2File(fp10,nfp10));
         //System.out.println(g.writeNewArea2File(fp4,nfp4));
     }
 
@@ -191,7 +197,7 @@ public class GetFtlareas {
                     sb.append("\t");
                     sb.append(mapChr.get(chrName));
                     sb.append("\t");
-                    sb.append("not-covered");
+                    sb.append("other");
                     //sb.append("\t");
                     sb.append("\n");
                     i++;
@@ -204,7 +210,7 @@ public class GetFtlareas {
                     fw.write("\t");
                     fw.write(mapChr.get(chrName));
                     fw.write("\t");
-                    fw.write("covered");
+                    fw.write("new-covered");
                     fw.write("\t");
                     fw.write("\n");
 
@@ -218,7 +224,7 @@ public class GetFtlareas {
                 sb.append("\t");
                 sb.append(mapChr.get(chrName));
                 sb.append("\t");
-                sb.append("not-covered");
+                sb.append("other");
                 //sb.append("\t");
                 sb.append("\n");
                 flag = sline[2];
@@ -228,7 +234,7 @@ public class GetFtlareas {
                 fw.write("\t");
                 fw.write(mapChr.get(chrName));
                 fw.write("\t");
-                fw.write("covered");
+                fw.write("new-covered");
                 //fw.write("\t");
                 fw.write("\n");
             }
