@@ -30,46 +30,59 @@ public class BwaBed2Fbed {
 //            put("NC_001147.6",15);
 //            put("NC_001148.4",16);
 //            put("NC_001224.1",17);
-            put("ref|NC_001133|",1);
-            put("ref|NC_001134|",2);
-            put("ref|NC_001135|",3);
-            put("ref|NC_001136|",4);
-            put("ref|NC_001137|",5);
-            put("ref|NC_001138|",6);
-            put("ref|NC_001139|",7);
-            put("ref|NC_001140|",8);
-            put("ref|NC_001141|",9);
-            put("ref|NC_001142|",10);
-            put("ref|NC_001143|",11);
-            put("ref|NC_001144|",12);
-            put("ref|NC_001145|",13);
-            put("ref|NC_001146|",14);
-            put("ref|NC_001147|",15);
-            put("ref|NC_001148|",16);
-            put("ref|NC_001224|",17);
+//            put("ref|NC_001133|",1);
+//            put("ref|NC_001134|",2);
+//            put("ref|NC_001135|",3);
+//            put("ref|NC_001136|",4);
+//            put("ref|NC_001137|",5);
+//            put("ref|NC_001138|",6);
+//            put("ref|NC_001139|",7);
+//            put("ref|NC_001140|",8);
+//            put("ref|NC_001141|",9);
+//            put("ref|NC_001142|",10);
+//            put("ref|NC_001143|",11);
+//            put("ref|NC_001144|",12);
+//            put("ref|NC_001145|",13);
+//            put("ref|NC_001146|",14);
+//            put("ref|NC_001147|",15);
+//            put("ref|NC_001148|",16);
+//            put("ref|NC_001224|",17);
+            put("Chr1",1);
+            put("Chr2",2);
+            put("Chr3",3);
+            put("Chr4",4);
+            put("Chr5",5);
+            put("ChrM",6);
+            put("ChrC",7);
         }
     };
 
     Map<Integer,Integer> chrNum2len = new HashMap<>(){
         {
-            put(1,230218);
-            put(2,1043403);
-            put(3,1360024);
-            put(4,2891958);
-            put(5,3468833);
-            put(6,3738995);
-            put(7,4829936);
-            put(8,5392580);
-            put(9,5832469);
-            put(10,6578221);
-            put(11,7245038);
-            put(12,8323216);
-            put(13,9247648);
-            put(14,10031982);
-            put(15,11123274);
-            put(16,12071341);
-            put(17,12157121);
-
+//            put(1,230218);
+//            put(2,1043403);
+//            put(3,1360024);
+//            put(4,2891958);
+//            put(5,3468833);
+//            put(6,3738995);
+//            put(7,4829936);
+//            put(8,5392580);
+//            put(9,5832469);
+//            put(10,6578221);
+//            put(11,7245038);
+//            put(12,8323216);
+//            put(13,9247648);
+//            put(14,10031982);
+//            put(15,11123274);
+//            put(16,12071341);
+//            put(17,12157121);
+            put(1,32540122);
+            put(2,54757207);
+            put(3,80500720);
+            put(4,102078794);
+            put(5,131559680);
+            put(6,131926605);
+            put(7,132081084);
         }
     };
 
@@ -133,10 +146,12 @@ public class BwaBed2Fbed {
         String path18 = "D:\\fanse-work-test\\fatel-read-file\\r-covered-all.bed";
         String new_path18= "D:\\fanse-work-test\\fatel-read-file\\r-covered-all-bw.bed";
 
+        String path19 = "E:\\Arab\\bed-files\\newArea-merge.bed";
+        String new_path19= "E:\\Arab\\repeat\\newArea-bw.bed";
 
         BwaBed2Fbed bwaBed2Fbed = new BwaBed2Fbed();
        // System.out.println( bwaBed2Fbed.transferBwaIdx(path18,new_path18));
-        System.out.println( bwaBed2Fbed.transferBwaIdx1(path18,new_path18));
+        System.out.println(bwaBed2Fbed.transferBwaIdx(path19,new_path19));
 
     }
     public int transferBwaIdx(String file_path,String new_file_path){
@@ -156,8 +171,8 @@ public class BwaBed2Fbed {
                     Integer l = Integer.valueOf(idx_l);
                     Integer r = Integer.valueOf(idx_r);
                     Integer inc = chrNum2len.get(chrSeq-1);
-                    l += inc;
-                    r += inc;
+                    l -= inc;
+                    r -= inc;
                     idx_l = String.valueOf(l);
                     idx_r = String.valueOf(r);
                 }

@@ -12,8 +12,10 @@ public class R2bed {
         String index_path1 = "D:/giraffe/fanse2-res2/fast_index.txt";
         String index_path2 = "D:/protein-data-set/yeast/res-teat/fast_index.txt";
         String index_path3 = "D:\\fanse-work-test\\fast_index.txt";
+        String index_path4 = "E:\\Arab\\old\\fast_index.txt";
+        String index_path5 = "E:\\Arab\\new3\\fast_index.txt";
 
-        List<ChrIndexInfo> list = r.get_fast_idx_file(index_path3);
+        List<ChrIndexInfo> list = r.get_fast_idx_file(index_path5);
         for(ChrIndexInfo a : list){
             System.out.print(a.fileSeq +" "+a.chrName+" "+a.chrIndex);
             System.out.println();
@@ -30,7 +32,18 @@ public class R2bed {
         String dir_path3 = "D:\\fanse-work-test\\";
         String bed_path3 = "D:\\fanse-work-test\\fanse-160-4257.bed";
 
-        int f = r.get_r2bed(dir_path3,list,bed_path3);
+        String dir_path4 = "D:\\fanse-work-test\\";
+        String bed_path4 = "E:\\remake-res-data\\new\\new-first-all.bed";
+
+        String dir_path5 = "E:\\Arab\\old\\";
+        String bed_path5 = "E:\\Arab\\old\\old-fst-all.bed";
+
+        String dir_path6 = "E:\\Arab\\new3\\";
+        String bed_path6 = "E:\\Arab\\new3\\new-fst-all.bed";
+
+
+
+        int f = r.get_r2bed(dir_path6,list,bed_path6);
         System.out.println(f);
 
     }
@@ -88,10 +101,14 @@ public class R2bed {
                     String line;
                     int j = 0;
                     int slen = 0;
+                    String realSeq = "";
                     while ((line = rFile.readLine()) != null) {
                         String[] sline = line.split("\t");
                        // System.out.println(11111);
+
                         if (j % 2 == 0) {
+                            String readsSeq = sline[0];   //获取当前比对到的reads对应的序号
+                            realSeq = getReadsSeq(readsSeq);
                             String s = sline[1];
                             slen = s.length();
                         } else {
@@ -106,6 +123,9 @@ public class R2bed {
                             sb.append(index_l);
                             sb.append("\t");
                             sb.append(index_r);
+                            sb.append("\t");
+                            sb.append(realSeq);
+
                             sb.append("\n");
                             bw.write(sb.toString());
                             //bw.close();
@@ -130,6 +150,19 @@ public class R2bed {
         }
 
         return 0;
+
+    }
+
+    public String getReadsSeq(String  preSeq){
+        String resSeq = "";
+        Integer num = Integer.valueOf(preSeq);
+        //Integer realNum = num/2 + 1;
+        Integer realNum = num;  //拟南芥的比对不需要转换序列
+
+        resSeq = String.valueOf(realNum);
+
+        return resSeq;
+
 
     }
 

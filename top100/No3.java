@@ -23,6 +23,7 @@ class Solution3 {
         Set<Character> set = new HashSet<>();
         while(i<len && j<len){
             if(!set.contains(s.charAt(j))){
+
                 set.add(s.charAt(j));
                 j++;
                 res = Math.max(res,(j-i));

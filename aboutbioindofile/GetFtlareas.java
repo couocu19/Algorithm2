@@ -10,27 +10,34 @@ public class GetFtlareas {
                     "6578221","7245038","8323216","9247648","10031982","11123274","12071341","12157121"};
     Integer[] lns1 = {0,230218,1043403,1360024,2891958,3468833,3738995,4829936,5392580,5832469,
             6578221,7245038,8323216,9247648,10031982,11123274,12071341};
+
+    //人类数据
+    String[] lns3 = {"0","248387328","242696752","201105948","193574945","182045439","172126628","160567428","146259331","150617247","134758134","135127769","133324548","113566686",
+                      "101161492","99753195","96330374","84276897","80542538","61707364","66210255","45090682","51324926","154259566","62460029"};
+
+
+    Integer[] lns2 = {32540122,22217084,25743512,21578073,29480885,154478,366924};
     List<Map<Integer,Integer>> map_all = new ArrayList<>();
 
     Map<String,String> mapChr = new HashMap<>(){
         {
-            put("ref|NC_001133|","chr1");
-            put("ref|NC_001134|","chr2");
-            put("ref|NC_001135|","chr3");
-            put("ref|NC_001136|","chr4");
-            put("ref|NC_001137|","chr5");
-            put("ref|NC_001138|","chr6");
-            put("ref|NC_001139|","chr7");
-            put("ref|NC_001140|","chr8");
-            put("ref|NC_001141|","chr9");
-            put("ref|NC_001142|","chr10");
-            put("ref|NC_001143|","chr11");
-            put("ref|NC_001144|","chr12");
-            put("ref|NC_001145|","chr13");
-            put("ref|NC_001146|","chr14");
-            put("ref|NC_001147|","chr15");
-            put("ref|NC_001148|","chr16");
-            put("ref|NC_001224|","chr17");
+//            put("ref|NC_001133|","chr1");
+//            put("ref|NC_001134|","chr2");
+//            put("ref|NC_001135|","chr3");
+//            put("ref|NC_001136|","chr4");
+//            put("ref|NC_001137|","chr5");
+//            put("ref|NC_001138|","chr6");
+//            put("ref|NC_001139|","chr7");
+//            put("ref|NC_001140|","chr8");
+//            put("ref|NC_001141|","chr9");
+//            put("ref|NC_001142|","chr10");
+//            put("ref|NC_001143|","chr11");
+//            put("ref|NC_001144|","chr12");
+//            put("ref|NC_001145|","chr13");
+//            put("ref|NC_001146|","chr14");
+//            put("ref|NC_001147|","chr15");
+//            put("ref|NC_001148|","chr16");
+//            put("ref|NC_001224|","chr17");
 //            put("NC_001133.9","chr1");
 //            put("NC_001134.8","chr2");
 //            put("NC_001135.5","chr3");
@@ -48,6 +55,13 @@ public class GetFtlareas {
 //            put("NC_001147.6","chr15");
 //            put("NC_001148.4","chr16");
 //            put("NC_001224.1","chr17");
+            put("Chr1","Chr1");
+            put("Chr2","Chr2");
+            put("Chr3","Chr3");
+            put("Chr4","Chr4");
+            put("Chr5","Chr5");
+            put("ChrM","ChrM");
+            put("ChrC","ChrC");
 
         }
     };
@@ -64,12 +78,8 @@ public class GetFtlareas {
         String nfp2 = "D:\\protein-data-set\\yeast\\SRR4072457\\fanse2-res2\\new-covered.csv";
 
         String fp3 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new.bed";
-       // String nfp3 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl.csv";
         String nfp3 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl-smpl.csv";
 
-//        String fp6 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new.bed";
-//        // String nfp3 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl.csv";
-//        String nfp6 = "D:\\protein-data-set\\yeast\\res-teat\\mf4257-new-ftl-smpl.csv";
 
         String fp4 = "D:\\protein-data-set\\yeast\\res-teat\\right-ftl\\r-covered-fs.bed";
         String nfp4 = "D:\\protein-data-set\\yeast\\res-teat\\right-ftl\\r-covered.csv";
@@ -88,12 +98,21 @@ public class GetFtlareas {
 
         String fp10 = "D:\\fanse-work-test\\fatel-read-file\\r-covered.bed";
         String nfp10 = "D:\\fanse-work-test\\fatel-read-file\\r-covered-all.bed";
+
+        String fp11 = "E:\\Arab\\bed-files\\newGene-merge.bed";
+        String nfp11 = "E:\\Arab\\bed-files\\newGene-all.bed";
+
+        String fp12 = "E:\\Arab\\bed-files\\repeta-重复区域\\repeatSort.bed";
+        String nfp12 = "E:\\Arab\\bed-files\\repeta-重复区域\\repeatSortAll.bed";
         GetFtlareas g = new GetFtlareas();
         g.getChrRanks();
 
-        //System.out.println(g.writeArea2File(fp7,nfp7));
-        System.out.println(g.writeAllArea2File(fp10,nfp10));
-        //System.out.println(g.writeNewArea2File(fp4,nfp4));
+        String fp13 = "E:\\complete-gene-ann\\human\\hmmerge-5000.bed";
+        String nfp13 = "E:\\complete-gene-ann\\human\\hm-newGeneArea.bed";
+
+        System.out.println(g.writeArea2File(fp13,nfp13));
+        //System.out.println(g.writeAllArea2File(fp12,nfp12));
+        //System.out.println(g.writeNewArea2File(fp13,nfp13));
     }
 
     /**
@@ -119,15 +138,15 @@ public class GetFtlareas {
                     sb.append("\t");
                     sb.append(flag);
                     sb.append("\t");
-                    sb.append(lns[i]);
+                    sb.append(lns3[i]);
                     sb.append("\t");
-                    sb.append(getAreaLen(flag,lns[i]));
+                    sb.append(getAreaLen(flag,lns3[i]));
                     sb.append("\t");
-                    sb.append(getAreaRank(i,flag,lns[i]));
+                    sb.append(getAreaRank(i,flag,lns3[i]));
                     sb.append("\n");
                     i++;
                     fw.write(sb.toString());
-                    flag = String.valueOf(lns1[i]+1);
+                    flag = String.valueOf(lns3[i]+1);
 
                 }
 
@@ -149,11 +168,11 @@ public class GetFtlareas {
             sb.append("\t");
             sb.append(flag);
             sb.append("\t");
-            sb.append(lns[i]);
+            sb.append(lns3[i]);
             sb.append("\t");
-            sb.append(getAreaLen(flag,lns[i]));
+            sb.append(getAreaLen(flag,lns3[i]));
             sb.append("\t");
-            sb.append(getAreaRank(i,flag,lns[i]));
+            sb.append(getAreaRank(i,flag,lns3[i]));
 
             sb.append("\n");
             fw.write(sb.toString());
@@ -189,11 +208,12 @@ public class GetFtlareas {
                 sline = line.split("\t");
                 if((!chrName.equals("")) && (!sline[0].equals(chrName))){
                     //未匹配区间
+                    //写入普通区域
                     sb = new StringBuilder(chrName);
                     sb.append("\t");
                     sb.append(flag);
                     sb.append("\t");
-                    sb.append(lns[i]);
+                    sb.append(lns2[i]);
                     sb.append("\t");
                     sb.append(mapChr.get(chrName));
                     sb.append("\t");
@@ -203,15 +223,15 @@ public class GetFtlareas {
                     i++;
                     //写入
                     fw.write(sb.toString());
-                    flag = String.valueOf(lns1[i]+1);
+                    flag = String.valueOf(lns2[i]+1);
 
                     //匹配区间
                     fw.write(line);
-                    fw.write("\t");
-                    fw.write(mapChr.get(chrName));
-                    fw.write("\t");
-                    fw.write("new-covered");
-                    fw.write("\t");
+                   // fw.write("\t");
+                   // fw.write(mapChr.get(chrName));
+                   // fw.write("\t");
+                   // fw.write("commonArea");
+                   // fw.write("\t");
                     fw.write("\n");
 
                 }
@@ -231,10 +251,10 @@ public class GetFtlareas {
                 fw.write(sb.toString());
 
                 fw.write(line);
-                fw.write("\t");
-                fw.write(mapChr.get(chrName));
-                fw.write("\t");
-                fw.write("new-covered");
+               // fw.write("\t");
+               // fw.write(mapChr.get(chrName));
+               // fw.write("\t");
+               // fw.write("commonArea");
                 //fw.write("\t");
                 fw.write("\n");
             }
@@ -242,7 +262,7 @@ public class GetFtlareas {
             sb.append("\t");
             sb.append(flag);
             sb.append("\t");
-            sb.append(lns[i]);
+            sb.append(lns2[i]);
             sb.append("\n");
             fw.write(sb.toString());
 
